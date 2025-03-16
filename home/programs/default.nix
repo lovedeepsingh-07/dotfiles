@@ -21,8 +21,8 @@
       package = pkgs.emptyDirectory;
       extraConfig = {
         user = {
-          name = "AxewBoTX";
-          email = "lovedeepbrar54155@gmail.com";
+          name = "lovedeepsingh-07";
+          email = "lovedeepsinghbrar07@gmail.com";
         };
         init.defaultBranch = "main";
         core.editor = "nvim";
