@@ -17,15 +17,6 @@
     { key = "<C-d>"; mode = [ "n" ]; action = "<C-d>zz"; options = { silent = true; noremap = true; desc = "Scroll down with cursor in center"; }; }
     { key = "n"; mode = [ "n" ]; action = "nzzzv"; options = { silent = true; noremap = true; desc = "Search next with cursor centered"; }; }
     { key = "N"; mode = [ "n" ]; action = "Nzzzv"; options = { silent = true; noremap = true; desc = "Search previous with cursor centered"; }; }
-    # (vanilla) pane movement hotkeys
-    { key = "<C-e>h"; mode = [ "n" ]; action = ":wincmd h<CR>"; options = { silent = true; noremap = true; desc = "Navigate left window"; }; }
-    { key = "<C-e>j"; mode = [ "n" ]; action = ":wincmd j<CR>"; options = { silent = true; noremap = true; desc = "Navigate down window"; }; }
-    { key = "<C-e>k"; mode = [ "n" ]; action = ":wincmd k<CR>"; options = { silent = true; noremap = true; desc = "Navigate up window"; }; }
-    { key = "<C-e>l"; mode = [ "n" ]; action = ":wincmd l<CR>"; options = { silent = true; noremap = true; desc = "Navigate right window"; }; }
-    { key = "<C-w>h"; mode = [ "n" ]; action = ""; options = { silent = true; noremap = true; }; }
-    { key = "<C-w>j"; mode = [ "n" ]; action = ""; options = { silent = true; noremap = true; }; }
-    { key = "<C-w>k"; mode = [ "n" ]; action = ""; options = { silent = true; noremap = true; }; }
-    { key = "<C-w>l"; mode = [ "n" ]; action = ""; options = { silent = true; noremap = true; }; }
 
     # (gitsigns)
     { key = "<leader>gs"; action = "<cmd>Gitsigns toggle_signs<CR>"; options = { silent = true; noremap = true; }; }

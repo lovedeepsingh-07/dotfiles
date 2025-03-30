@@ -1,4 +1,4 @@
-{ pkgs, flake_inputs,username, ... }:
+{ pkgs, flake_inputs, username, ... }:
 {
   home.username = username;
   home.homeDirectory = "/home/${username}";
@@ -30,7 +30,7 @@
     live-server
     zig
     jdk
-	rust-bin.stable."1.82.0".default
+    rust-bin.stable."1.82.0".default
     cargo-binstall
     sccache
     bacon
@@ -42,6 +42,7 @@
     tree-sitter
     cmatrix
     nyancat
+    cargo-generate
   ];
 
   home.stateVersion = "24.11";
