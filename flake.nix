@@ -8,6 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rust-overlay.url = "github:oxalica/rust-overlay";
+	  zig-overlay.url = "github:mitchellh/zig-overlay";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,12 +30,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { nixpkgs, home-manager, rust-overlay, flake-utils, ... }@inputs:
+  outputs = { nixpkgs, home-manager, rust-overlay,zig-overlay, flake-utils, ... }@inputs:
     let
       system = "x86_64-linux";
       overlays = [ (import rust-overlay) ];
       pkgs = import nixpkgs { inherit system overlays; };
       username = "axew";
+	  zig-pkg = zig-overlay.packages.${system}."0.14.0";
     in
     {
       formatter.${system} = pkgs.nixpkgs-fmt;
@@ -44,7 +46,7 @@
           modules = [ ./home ];
           extraSpecialArgs = {
             flake_inputs = inputs;
-            inherit username;
+            inherit username zig-pkg;
           };
         };
       };

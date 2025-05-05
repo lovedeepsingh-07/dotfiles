@@ -2,7 +2,7 @@
 {
   programs.starship = {
     enable = true;
-    enableZshIntegration = true;
+	enableZshIntegration = true;
     settings = {
       add_newline = false;
       format = ''[┌ ](fg:color_text)$username[@](fg:color_red)$hostname$directory$git_branch$git_status$linebreak

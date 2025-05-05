@@ -1,4 +1,4 @@
-{ pkgs, flake_inputs, username, ... }:
+{ pkgs, flake_inputs, username,zig-pkg, ... }:
 {
   home.username = username;
   home.homeDirectory = "/home/${username}";
@@ -28,9 +28,9 @@
     bun
     deno
     live-server
-    zig
     jdk
     rust-bin.stable."1.82.0".default
+	zig-pkg
     cargo-binstall
     sccache
     bacon
@@ -44,6 +44,10 @@
     nyancat
     cargo-generate
   ];
+
+  home.sessionVariables = {
+  NIX_PATH = "$HOME/.nix-defexpr/channels";
+	};
 
   home.stateVersion = "24.11";
 }

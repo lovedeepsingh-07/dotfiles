@@ -26,6 +26,7 @@
         };
         init.defaultBranch = "main";
         core.editor = "nvim";
+		core.pager = "nvim -";
       };
     };
     fastfetch = {
