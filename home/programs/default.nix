@@ -15,6 +15,8 @@
     ./zsh
   ];
 
+  programs.home-manager.enable = true;
+
   programs = {
     git = {
       enable = true;
@@ -26,7 +28,7 @@
         };
         init.defaultBranch = "main";
         core.editor = "nvim";
-		core.pager = "nvim -";
+        core.pager = "nvim -";
       };
     };
     fastfetch = {

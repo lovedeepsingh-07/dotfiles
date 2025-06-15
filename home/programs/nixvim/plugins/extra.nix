@@ -9,6 +9,7 @@
       (pkgs.vimUtils.buildVimPlugin {
         name = "helpview";
         src = flake_inputs.helpview-nvim;
+        doCheck = false;
       })
       (pkgs.vimUtils.buildVimPlugin {
         name = "nvim-gomove";

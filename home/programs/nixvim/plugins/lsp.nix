@@ -55,7 +55,10 @@
           tailwindcss.enable = true;
           gopls.enable = true;
           templ.enable = true;
-          nil_ls.enable = true;
+          nil_ls = {
+            enable = true;
+            settings.nix.flake.autoArchive = false;
+          };
         };
         luaConfig.content = ''
           					vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
