@@ -35,7 +35,7 @@
             };
           };
           rust_analyzer = {
-            enable = true;
+            enable = false; #TODO: Disable rust-analyzer for some time
             installCargo = false;
             installRustc = false;
             installRustfmt = false;

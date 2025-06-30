@@ -21,6 +21,8 @@
         	set -s escape-time 0
         	set -g repeat-time 0
 
+			set -g allow-passthrough off
+
         	set -g mode-style "fg=#eee8d5,bg=#073642"
         	set -g message-style "fg=#eee8d5,bg=#073642"
         	set -g message-command-style "fg=#eee8d5,bg=#073642"
