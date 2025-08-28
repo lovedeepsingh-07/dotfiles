@@ -17,6 +17,7 @@
     { key = "<C-d>"; mode = [ "n" ]; action = "<C-d>zz"; options = { silent = true; noremap = true; desc = "Scroll down with cursor in center"; }; }
     { key = "n"; mode = [ "n" ]; action = "nzzzv"; options = { silent = true; noremap = true; desc = "Search next with cursor centered"; }; }
     { key = "N"; mode = [ "n" ]; action = "Nzzzv"; options = { silent = true; noremap = true; desc = "Search previous with cursor centered"; }; }
+    { key = "<C-]>"; mode = [ "n" ]; action = ""; options = { silent = true; noremap = true; desc = "Disable <C-]> keymap, it took you to the location of definition file of the thing on which your cursor was, it was annoying"; }; }
 
     # (gitsigns)
     { key = "<leader>gs"; action = "<cmd>Gitsigns toggle_signs<CR>"; options = { silent = true; noremap = true; }; }

@@ -41,7 +41,7 @@
           "_" = [ "trim_whitespace" ];
           lua = [ "stylua" ];
           nix = [ "nixpkgs-fmt" ];
-          # rust = [ "rustfmt" ]; TODO: Disable rust-fmt for some time
+          rust = [ "rustfmt" ];
           go = [ "goimports-reviser" "golines" "gofmt" "gofumpt" ];
           javascript = [ "prettierd" "prettier" ];
           typescript = [ "prettierd" "prettier" ];
