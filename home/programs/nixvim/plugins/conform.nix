@@ -49,6 +49,7 @@
           css = [ "prettierd" "prettier" ];
           html = [ "prettierd" "prettier" ];
           cpp = [ "clang-format" ];
+          c = [ "clang-format" ];
           json = [ "jq" ];
           yaml = [ "yamlfmt" ];
           python = [ "isort" "black" ];

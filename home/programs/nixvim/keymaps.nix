@@ -35,5 +35,8 @@
     { key = "<A-C-L>"; mode = "v"; action = "<Plug>GoVSMRight"; options = { silent = true; noremap = true; }; }
     # (obsidian)
     { key = "<leader>ogf"; mode = [ "n" ]; action = "<cmd>ObsidianFollowLink<CR>"; options = { silent = true; noremap = true; }; }
+    # (nvim-dap)
+    { key = "<leader>db"; mode = [ "n" ]; action = "<cmd>DapToggleBreakpoint<CR>"; options = { silent = true; noremap = true; }; }
+    { key = "<leader>dc"; mode = [ "n" ]; action = "<cmd>DapContinue<CR>"; options = { silent = true; noremap = true; }; }
   ];
 }

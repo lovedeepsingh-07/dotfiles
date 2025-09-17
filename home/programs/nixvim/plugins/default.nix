@@ -4,18 +4,18 @@
     colorscheme = "mellow";
     plugins = {
       web-devicons = {
-	  	enable = true;
-		settings = {
-			override_by_filename = {
-				"justfile" = {
-					icon = "";
-					color = "#6D8086";
-					cterm_color = "66";
-					name = "Justfile";
-				};
-			};
-		};
-	  };
+        enable = true;
+        settings = {
+          override_by_filename = {
+            "justfile" = {
+              icon = "";
+              color = "#6D8086";
+              cterm_color = "66";
+              name = "Justfile";
+            };
+          };
+        };
+      };
       colorizer = {
         enable = true;
         lazyLoad = {
@@ -107,5 +107,6 @@
     ./extra.nix
     ./lz-n.nix
     ./obsidian.nix
+    ./dap.nix
   ];
 } 

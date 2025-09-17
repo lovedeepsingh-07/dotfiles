@@ -43,6 +43,8 @@
     cmatrix
     nyancat
     cargo-generate
+    delve
+    # vscode-extensions.vadimcn.vscode-lldb
   ];
 
   home.sessionVariables = {
