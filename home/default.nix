@@ -1,4 +1,4 @@
-{ pkgs, flake_inputs, username, zig-pkg, ... }:
+{ pkgs, flake_inputs, username, zig-pkg, rust-pkg, ... }:
 {
   home.username = username;
   home.homeDirectory = "/home/${username}";
@@ -29,7 +29,7 @@
     deno
     live-server
     jdk
-    rust-bin.stable.latest.default
+    rust-pkg
     zig-pkg
     cargo-binstall
     sccache

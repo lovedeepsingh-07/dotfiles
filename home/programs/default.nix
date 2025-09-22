@@ -11,7 +11,6 @@
     ./starship
     ./tmux
     ./waybar
-    ./xremap
     ./zsh
   ];
 
