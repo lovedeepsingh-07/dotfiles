@@ -11,6 +11,7 @@
     isort
     black
     shfmt
+    clang-tools
   ];
   programs.nixvim = {
     plugins.conform-nvim = {

@@ -1,6 +1,6 @@
-{pkgs,...}:
+{ pkgs, ... }:
 {
-services = {
+  services = {
     xserver = {
       enable = true;
       desktopManager = {
@@ -25,5 +25,5 @@ services = {
       };
     };
     displayManager.defaultSession = "none+i3";
-};
+  };
 }

@@ -3,8 +3,8 @@
   imports =
     [
       ./hardware-config.nix
-	  ./programs
-	  ./audio.nix
+      ./programs
+      ./audio.nix
     ];
 
   boot.loader.grub = {
@@ -37,17 +37,19 @@
     packages = with pkgs; [
       brave
       alacritty
+      wineWowPackages.stable # for running windows apps on linux
     ];
   };
   environment = {
     pathsToLink = [ "/libexec" ];
     systemPackages = with pkgs; [
-		vim
-		git
-		just
-	];
+      vim
+      git
+      just
+    ];
   };
 
+  nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "25.05";
 }

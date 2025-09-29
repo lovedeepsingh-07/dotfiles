@@ -28,15 +28,7 @@
     { key = "<leader>;g"; action = ":LazyGit<CR>"; options = { silent = true; noremap = true; }; }
     # (nvim-tree)
     { key = "<leader>sf"; mode = "n"; action = ":NvimTreeFindFileToggle<CR>"; options = { silent = true; noremap = true; }; }
-    # (nvim-gomove)
-    { key = "<A-C-H>"; mode = "v"; action = "<Plug>GoVSMLeft"; options = { silent = true; noremap = true; }; }
-    { key = "<A-C-J>"; mode = "v"; action = "<Plug>GoVSMDown"; options = { silent = true; noremap = true; }; }
-    { key = "<A-C-K>"; mode = "v"; action = "<Plug>GoVSMUp"; options = { silent = true; noremap = true; }; }
-    { key = "<A-C-L>"; mode = "v"; action = "<Plug>GoVSMRight"; options = { silent = true; noremap = true; }; }
     # (obsidian)
     { key = "<leader>ogf"; mode = [ "n" ]; action = "<cmd>ObsidianFollowLink<CR>"; options = { silent = true; noremap = true; }; }
-    # (nvim-dap)
-    { key = "<leader>db"; mode = [ "n" ]; action = "<cmd>DapToggleBreakpoint<CR>"; options = { silent = true; noremap = true; }; }
-    { key = "<leader>dc"; mode = [ "n" ]; action = "<cmd>DapContinue<CR>"; options = { silent = true; noremap = true; }; }
   ];
 }

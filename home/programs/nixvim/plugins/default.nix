@@ -107,6 +107,5 @@
     ./extra.nix
     ./lz-n.nix
     ./obsidian.nix
-    ./dap.nix
   ];
 } 

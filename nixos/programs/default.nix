@@ -1,11 +1,11 @@
-{...}:{
-imports = [
-	./xremap.nix
-	./i3.nix
-];
+{ ... }: {
+  imports = [
+    ./xremap.nix
+    ./i3.nix
+  ];
   programs = {
-  	zsh.enable = true;
-	dconf.enable = true;
-	i3lock.enable = true;
+    zsh.enable = true;
+    dconf.enable = true;
+    i3lock.enable = true;
   };
 }

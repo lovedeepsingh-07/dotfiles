@@ -11,10 +11,6 @@
         src = flake_inputs.helpview-nvim;
         doCheck = false;
       })
-      (pkgs.vimUtils.buildVimPlugin {
-        name = "nvim-gomove";
-        src = flake_inputs.nvim-gomove;
-      })
     ];
   };
 }
