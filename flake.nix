@@ -74,3 +74,4 @@
       formatter.${system} = pkgs.nixpkgs-fmt;
     };
 }
+

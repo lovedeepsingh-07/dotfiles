@@ -1,3 +1,9 @@
+# [module/audio]
+# type = custom/script
+# exec = ~/.config/polybar/scripts/pipewire.sh
+# interval = 1
+# label = %output%
+
 [module/pulseaudio]
 type = internal/pulseaudio
 

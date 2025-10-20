@@ -1,4 +1,4 @@
-{ pkgs, flake_inputs, username, zig-pkg, rust-pkg, ... }:
+{ pkgs, flake_inputs,system, username, zig-pkg, rust-pkg, ... }:
 {
   home.username = username;
   home.homeDirectory = "/home/${username}";
@@ -44,6 +44,9 @@
     nyancat
     cargo-generate
     delve
+	# (import ./programs/lua.nix { inherit system pkgs; }).pkg
+	luajit
+	pkg-config
     # vscode-extensions.vadimcn.vscode-lldb
   ];
 
