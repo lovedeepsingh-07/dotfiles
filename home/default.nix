@@ -1,13 +1,9 @@
-{ pkgs, flake_inputs,system, username, zig-pkg, rust-pkg, ... }:
-{
+{ pkgs, flake_inputs, system, username, zig-pkg, rust-pkg, ... }: {
   home.username = username;
   home.homeDirectory = "/home/${username}";
   news.display = "silent";
 
-  imports = [
-    flake_inputs.nixvim.homeManagerModules.nixvim
-    ./programs
-  ];
+  imports = [ flake_inputs.nixvim.homeManagerModules.nixvim ./programs ];
 
   home.packages = with pkgs; [
     which
@@ -44,15 +40,13 @@
     nyancat
     cargo-generate
     delve
-	# (import ./programs/lua.nix { inherit system pkgs; }).pkg
-	luajit
-	pkg-config
+    # (import ./programs/lua.nix { inherit system pkgs; }).pkg
+    luajit
+    pkg-config
     # vscode-extensions.vadimcn.vscode-lldb
   ];
 
-  home.sessionVariables = {
-    NIX_PATH = "$HOME/.nix-defexpr/channels";
-  };
+  home.sessionVariables = { NIX_PATH = "$HOME/.nix-defexpr/channels"; };
 
   home.stateVersion = "25.05";
 }

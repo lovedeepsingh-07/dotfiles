@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.nixvim = {
     colorscheme = "mellow";
     plugins = {
@@ -53,12 +52,10 @@
           enable = true;
           settings = {
             cmd = [ "Gitsigns" ];
-            keys = [ [ "gs" "<cmd>Gitsigns toggle_signs <CR>" ] ];
+            keys = [[ "gs" "<cmd>Gitsigns toggle_signs <CR>" ]];
           };
         };
-        settings = {
-          signcolumn = false;
-        };
+        settings = { signcolumn = false; };
       };
       lazygit.enable = true;
       render-markdown = {
@@ -81,11 +78,7 @@
           enable = true;
           settings.event = [ "BufReadPre" ];
         };
-        settings = {
-          disable_filetype = [
-            "TelescopePrompt"
-          ];
-        };
+        settings = { disable_filetype = [ "TelescopePrompt" ]; };
       };
       nvim-surround = {
         enable = true;
@@ -93,6 +86,10 @@
           enable = true;
           settings.event = [ "BufReadPre" ];
         };
+      };
+      kulala = {
+        enable = true;
+        settings = { global_keymaps = false; };
       };
     };
   };
@@ -108,4 +105,4 @@
     ./lz-n.nix
     ./obsidian.nix
   ];
-} 
+}

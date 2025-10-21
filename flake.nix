@@ -24,10 +24,6 @@
       url = "github:OXY2DEV/helpview.nvim";
       flake = false;
     };
-    nvim-gomove = {
-      url = "github:booperlv/nvim-gomove";
-      flake = false;
-    };
     minimal-tmux = {
       url = "github:niksingh710/minimal-tmux-status";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -71,7 +67,7 @@
           }
         ];
       };
-      formatter.${system} = pkgs.nixpkgs-fmt;
+      formatter.${system} = pkgs.nixfmt-classic;
     };
 }
 

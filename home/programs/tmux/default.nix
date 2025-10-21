@@ -1,19 +1,16 @@
-{ flake_inputs, ... }:
-{
+{ flake_inputs, ... }: {
   programs.tmux = {
     enable = true;
-    plugins = [
-      {
-        plugin = flake_inputs.minimal-tmux.packages.x86_64-linux.default;
-        extraConfig = # tmux
-          ''
-            			set -g @minimal-tmux-bg "#c9c7cd"
-            			set -g @minimal-tmux-status-right "#(whoami) "
-            			set -g @minimal-tmux-justify "left"
-            			set -g @minimal-tmux-indicator false
-            			'';
-      }
-    ];
+    plugins = [{
+      plugin = flake_inputs.minimal-tmux.packages.x86_64-linux.default;
+      extraConfig = # tmux
+        ''
+          set -g @minimal-tmux-bg "#c9c7cd"
+          set -g @minimal-tmux-status-right "#(whoami) "
+          set -g @minimal-tmux-justify "left"
+          set -g @minimal-tmux-indicator false
+        '';
+    }];
     extraConfig = # tmux
       ''
                 	set -g default-terminal "screen-256color"

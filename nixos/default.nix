@@ -1,11 +1,5 @@
-{ pkgs, ... }:
-{
-  imports =
-    [
-      ./hardware-config.nix
-      ./programs
-      ./audio.nix
-    ];
+{ pkgs, ... }: {
+  imports = [ ./hardware-config.nix ./programs ./audio.nix ];
 
   boot.loader.grub = {
     enable = true;
@@ -23,13 +17,9 @@
     openssh.enable = true;
   };
 
-  hardware.graphics = {
-    enable = true;
-  };
+  hardware.graphics = { enable = true; };
 
-  fonts = {
-    fontDir.enable = true;
-  };
+  fonts = { fontDir.enable = true; };
   users.users.axew = {
     shell = pkgs.zsh;
     isNormalUser = true;
@@ -42,11 +32,7 @@
   };
   environment = {
     pathsToLink = [ "/libexec" ];
-    systemPackages = with pkgs; [
-      vim
-      git
-      just
-    ];
+    systemPackages = with pkgs; [ vim git just ];
   };
 
   nixpkgs.config.allowUnfree = true;

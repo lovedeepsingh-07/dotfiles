@@ -1,32 +1,26 @@
 { flake_inputs, username, ... }: {
-  imports = [
-    flake_inputs.xremap.nixosModules.default
-  ];
+  imports = [ flake_inputs.xremap.nixosModules.default ];
   services.xremap = {
     enable = true;
     userName = username;
     config = {
-      modmap = [
-        {
-          name = "Global";
-          remap = {
-            CTRL_L = "reserved";
-            CAPSLOCK = "CTRL_L";
-          };
-        }
-      ];
-      keymap = [
-        {
-          name = "Global";
-          remap = {
-            "CTRL_R-BACKSLASH" = "CAPSLOCK";
-            "ALT_R-h" = "left";
-            "ALT_R-j" = "down";
-            "ALT_R-k" = "up";
-            "ALT_R-l" = "right";
-          };
-        }
-      ];
+      modmap = [{
+        name = "Global";
+        remap = {
+          CTRL_L = "reserved";
+          CAPSLOCK = "CTRL_L";
+        };
+      }];
+      keymap = [{
+        name = "Global";
+        remap = {
+          "CTRL_R-BACKSLASH" = "CAPSLOCK";
+          "ALT_R-h" = "left";
+          "ALT_R-j" = "down";
+          "ALT_R-k" = "up";
+          "ALT_R-l" = "right";
+        };
+      }];
     };
   };
 }

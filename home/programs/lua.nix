@@ -6,10 +6,11 @@
       url = "https://www.lua.org/ftp/lua-${version}.tar.gz";
       sha256 = "sha256-JkD8VqeV8p0o7xXhPDSkfiI5YLAkDoywqC2bBzhpUzM=";
     };
-    nativeBuildInputs = [ inputs.pkgs.makeWrapper inputs.pkgs.pkg-config inputs.pkgs.readline ];
+    nativeBuildInputs =
+      [ inputs.pkgs.makeWrapper inputs.pkgs.pkg-config inputs.pkgs.readline ];
     buildInputs = [ ];
 
-    configurePhase = ''make linux'';
+    configurePhase = "make linux";
     installPhase = ''
       		mkdir -p $out/bin $out/include $out/lib
       		cp src/lua src/luac $out/bin/

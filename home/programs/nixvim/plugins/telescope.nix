@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.nixvim = {
     plugins.telescope = {
       enable = true;
@@ -24,9 +23,7 @@
             "<C-j>" = {
               __raw = "require('telescope.actions').move_selection_next";
             };
-            "<C-[>" = {
-              __raw = "require('telescope.actions').close";
-            };
+            "<C-[>" = { __raw = "require('telescope.actions').close"; };
           };
         };
       };

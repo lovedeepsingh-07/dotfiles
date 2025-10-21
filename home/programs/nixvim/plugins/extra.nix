@@ -1,5 +1,4 @@
-{ pkgs, flake_inputs, ... }:
-{
+{ pkgs, flake_inputs, ... }: {
   programs.nixvim = {
     extraPlugins = [
       (pkgs.vimUtils.buildVimPlugin {

@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     stylua
     goimports-reviser
@@ -18,9 +17,7 @@
       enable = true;
       lazyLoad = {
         enable = true;
-        settings = {
-          event = [ "BufReadPre" ];
-        };
+        settings = { event = [ "BufReadPre" ]; };
       };
       settings = {
         format_on_save = # lua

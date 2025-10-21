@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.nixvim = {
     plugins = {
       treesitter = {
@@ -40,14 +39,10 @@
             "nix"
             "just"
           ];
-          highlight = {
-            enable = true;
-          };
+          highlight = { enable = true; };
         };
       };
-      treesitter-textobjects = {
-        enable = true;
-      };
+      treesitter-textobjects = { enable = true; };
     };
   };
 }

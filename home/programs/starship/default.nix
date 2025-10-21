@@ -1,12 +1,12 @@
-{ ... }:
-{
+{ ... }: {
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
     settings = {
       add_newline = false;
-      format = ''[┌ ](fg:color_text)$username[@](fg:color_red)$hostname$directory$git_branch$git_status$linebreak
-[└─](fg:color_text)$character'';
+      format = ''
+        [┌ ](fg:color_text)$username[@](fg:color_red)$hostname$directory$git_branch$git_status$linebreak
+        [└─](fg:color_text)$character'';
       #format = lib.concatStrings [
       #"[┌ ](fg:color_text)"
       #"$username"
@@ -46,7 +46,7 @@
 
       git_status = {
         style = "";
-        format = "[[(\($all_status$ahead_behind \))](fg:color_yellow)]($style)";
+        format = "[[(($all_status$ahead_behind ))](fg:color_yellow)]($style)";
       };
 
       line_break = { disabled = false; };

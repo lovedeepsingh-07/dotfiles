@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
   programs.nixvim = {
     plugins = {
       nvim-tree = {
@@ -9,18 +8,12 @@
           enable = false;
           autoOpen = false;
         };
-        diagnostics = {
-          enable = true;
-        };
+        diagnostics = { enable = true; };
         git = {
           enable = true;
           ignore = true;
         };
-        actions = {
-          openFile = {
-            quitOnOpen = true;
-          };
-        };
+        actions = { openFile = { quitOnOpen = true; }; };
         onAttach = {
           __raw = ''
             function(bufnr)

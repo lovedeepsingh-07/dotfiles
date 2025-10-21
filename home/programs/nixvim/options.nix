@@ -1,10 +1,9 @@
-{ ... }:
-{
+{ ... }: {
   programs.nixvim = {
     globals = {
       loaded_netrwPlugin = 1;
       loaded_netrw = 1;
-      mapleader = ''\'';
+      mapleader = "\\";
     };
     opts = {
       number = true;
