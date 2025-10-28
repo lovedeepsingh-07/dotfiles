@@ -10,7 +10,7 @@
           i3status
           i3blocks
           i3-gaps
-          (polybar.override { i3Support = true; })
+		  # (polybar.override { i3Support = true; })
           feh
           picom
           rofi

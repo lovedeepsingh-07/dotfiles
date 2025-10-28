@@ -35,15 +35,14 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # ---------- Application Keybinds ----------
 bindsym Mod4+space exec rofi -show run
-bindsym $mod+d exec dmenu_run
 bindsym $mod+Return exec alacritty
 
 # ---------- Startup Applications ----------
 exec --no-startup-id redshift -P -O 5000
+exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
 exec --no-startup-id feh --bg-fill ~/dotfiles/media/wallpaper.jpg
 exec --no-startup-id picom
 exec --no-startup-id xremap ~/.config/xremap.yml
@@ -98,11 +97,6 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -111,7 +105,8 @@ mode "resize" {
 }
 
 # ---------- Base Appearance ----------
-font pango: JetBrainsMonoNLNerdFontComplete 10
+font pango:monospace 8
+# font pango: JetBrainsMonoNLNerdFontComplete 10
 hide_edge_borders both
 for_window [class=".*"] border pixel 0
 gaps inner 10

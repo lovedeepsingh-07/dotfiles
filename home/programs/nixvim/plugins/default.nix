@@ -25,12 +25,15 @@
           filetypes = {
             lua.names = false;
             javascript.names = false;
+            typescript.names = false;
             python.names = false;
             svelte.names = false;
             go.names = false;
             rust.names = false;
             c.names = false;
             cpp.names = false;
+            nix.names = false;
+            zig.names = false;
           };
         };
       };
@@ -58,13 +61,13 @@
         settings = { signcolumn = false; };
       };
       lazygit.enable = true;
-      render-markdown = {
-        enable = true;
-        settings = {
-          pipe_table.enabled = false;
-          latex.enabled = false;
-        };
-      };
+      # render-markdown = {
+      #   enable = true;
+      #   settings = {
+      #     pipe_table.enabled = false;
+      #     latex.enabled = false;
+      #   };
+      # };
       comment = {
         enable = true;
         # lazyLoad = {
@@ -80,13 +83,13 @@
         };
         settings = { disable_filetype = [ "TelescopePrompt" ]; };
       };
-      nvim-surround = {
-        enable = true;
-        lazyLoad = {
-          enable = true;
-          settings.event = [ "BufReadPre" ];
-        };
-      };
+      # nvim-surround = {
+      #   enable = true;
+      #   lazyLoad = {
+      #     enable = true;
+      #     settings.event = [ "BufReadPre" ];
+      #   };
+      # };
       kulala = {
         enable = true;
         settings = { global_keymaps = false; };

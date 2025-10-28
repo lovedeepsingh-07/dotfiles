@@ -1,28 +1,16 @@
 {
   description = "nixos configuration";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/fd487183437963a59ba763c0cc4f27e3447dd6dd";
+    nixpkgs.url =
+      "github:nixos/nixpkgs/fd487183437963a59ba763c0cc4f27e3447dd6dd";
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
       url = "github:nix-community/home-manager/release-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    zig-overlay.url = "github:mitchellh/zig-overlay";
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-    mellow-nvim = {
-      url = "github:mellow-theme/mellow.nvim";
-      flake = false;
-    };
-    helpview-nvim = {
-      url = "github:OXY2DEV/helpview.nvim";
-      flake = false;
     };
     minimal-tmux = {
       url = "github:niksingh710/minimal-tmux-status";
@@ -36,12 +24,9 @@
       system = "x86_64-linux";
       pkgs = import inputs.nixpkgs {
         inherit system;
-        overlays = [ (import inputs.rust-overlay) ];
+        overlays = [ ];
       };
-      zig-pkg = inputs.zig-overlay.packages.${system}."0.12.1";
-      rust-pkg = pkgs.rust-bin.stable.latest.default;
-    in
-    {
+    in {
       nixosConfigurations.axew = inputs.nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
@@ -59,7 +44,7 @@
               backupFileExtension = "backup";
               extraSpecialArgs = {
                 flake_inputs = inputs;
-                inherit username system zig-pkg rust-pkg;
+                inherit username system;
               };
             };
           }

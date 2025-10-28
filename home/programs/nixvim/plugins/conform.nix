@@ -11,6 +11,7 @@
     black
     shfmt
     clang-tools
+    taplo
   ];
   programs.nixvim = {
     plugins.conform-nvim = {
@@ -38,7 +39,7 @@
         formatters_by_ft = {
           "_" = [ "trim_whitespace" ];
           lua = [ "stylua" ];
-          nix = [ "nixpkgs-fmt" ];
+          nix = [ "nixfmt-classic" ];
           rust = [ "rustfmt" ];
           go = [ "goimports-reviser" "golines" "gofmt" "gofumpt" ];
           javascript = [ "prettierd" "prettier" ];
@@ -53,6 +54,7 @@
           python = [ "isort" "black" ];
           markdown = [ "prettierd" "prettier" ];
           sh = [ "shfmt" ];
+          toml = [ "taplo" ];
         };
       };
     };

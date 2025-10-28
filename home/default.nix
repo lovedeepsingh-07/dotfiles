@@ -1,4 +1,4 @@
-{ pkgs, flake_inputs, system, username, zig-pkg, rust-pkg, ... }: {
+{ pkgs, flake_inputs, system, username, ... }: {
   home.username = username;
   home.homeDirectory = "/home/${username}";
   news.display = "silent";
@@ -15,31 +15,29 @@
     ripgrep
     virtualenv
     openssh
-    fontforge
-    clang
-    gdb
-    cmake
-    nodejs
-    go
-    bun
-    deno
-    live-server
-    jdk
-    rust-pkg
-    zig-pkg
-    cargo-binstall
+    # fontforge
+    # clang
+    # gdb
+    # cmake
+    # nodejs
+    # go
+    # bun
+    # deno
+    # live-server
+    # jdk
+    # cargo-binstall
     sccache
-    bacon
-    cargo-update
-    cargo-info
+    # bacon
+    # cargo-update
+    # cargo-info
     python312
     python312Packages.pylatexenc
-    nerd-font-patcher
+    # nerd-font-patcher
     tree-sitter
     cmatrix
     nyancat
-    cargo-generate
-    delve
+    # cargo-generate
+    # delve
     # (import ./programs/lua.nix { inherit system pkgs; }).pkg
     luajit
     pkg-config
