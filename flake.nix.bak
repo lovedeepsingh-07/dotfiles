@@ -1,22 +1,23 @@
 {
   description = "home-manager configuration";
   inputs = {
-    nixpkgs.url =
-      "github:nixos/nixpkgs/fd487183437963a59ba763c0cc4f27e3447dd6dd";
+    nixpkgs.url = "github:nixos/nixpkgs/d2ed99647a4b195f0bcc440f76edfa10aeb3b743";
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager/7aae0ee71a17b19708b93b3ed448a1a0952bf111";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url = "github:nix-community/nixvim";
+      url = "github:nix-community/nixvim/e114d442b14f3a299307ca9b0f0eab20e821f419";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     minimal-tmux = {
       url = "github:niksingh710/minimal-tmux-status";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    xremap = { url = "github:xremap/nix-flake"; };
+    xremap = {
+      url = "github:xremap/nix-flake";
+    };
   };
   outputs = { ... }@inputs:
     let

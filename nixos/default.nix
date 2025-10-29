@@ -28,6 +28,7 @@
       brave
       alacritty
       wineWowPackages.stable # for running windows apps on linux
+	  eww
     ];
   };
   environment = {

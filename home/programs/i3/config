@@ -38,8 +38,7 @@ bindsym Mod4+space exec rofi -show run
 bindsym $mod+Return exec alacritty
 
 # ---------- Startup Applications ----------
-exec --no-startup-id redshift -P -O 5000
-exec_always --no-startup-id ~/.config/polybar/launch.sh &
+exec --no-startup-id redshift -P -O 4000
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
@@ -97,7 +96,6 @@ mode "resize" {
         bindsym k resize shrink height 10 px or 10 ppt
         bindsym l resize grow width 10 px or 10 ppt
 
-
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -117,3 +115,7 @@ client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
+
+bar {
+        status_command i3status
+}

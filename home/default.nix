@@ -3,7 +3,7 @@
   home.homeDirectory = "/home/${username}";
   news.display = "silent";
 
-  imports = [ flake_inputs.nixvim.homeManagerModules.nixvim ./programs ];
+  imports = [ flake_inputs.nixvim.homeModules.nixvim ./programs ];
 
   home.packages = with pkgs; [
     which
@@ -15,6 +15,7 @@
     ripgrep
     virtualenv
     openssh
+    gcc
     # fontforge
     # clang
     # gdb
@@ -26,14 +27,14 @@
     # live-server
     # jdk
     # cargo-binstall
-    sccache
+    # sccache
     # bacon
     # cargo-update
     # cargo-info
-    python312
-    python312Packages.pylatexenc
+    # python312
+    # python312Packages.pylatexenc
     # nerd-font-patcher
-    tree-sitter
+    # tree-sitter
     cmatrix
     nyancat
     # cargo-generate

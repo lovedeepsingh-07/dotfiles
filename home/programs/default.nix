@@ -1,16 +1,16 @@
 { pkgs, ... }: {
   imports = [
     ./alacritty
-    ./hypr
+    # ./hypr
     ./i3
     ./nixvim
     ./picom
-    ./polybar
-    ./powershell
+    # ./polybar
+    # ./powershell
     ./rofi
     ./starship
     ./tmux
-    ./waybar
+    # ./waybar
     ./zsh
   ];
 
