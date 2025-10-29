@@ -1,9 +1,10 @@
 {
-  description = "nixos configuration";
+  description = "home-manager configuration";
   inputs = {
     nixpkgs.url =
       "github:nixos/nixpkgs/d2ed99647a4b195f0bcc440f76edfa10aeb3b743";
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils.url =
+      "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
     home-manager = {
       url =
         "github:nix-community/home-manager/7aae0ee71a17b19708b93b3ed448a1a0952bf111";
@@ -15,10 +16,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     minimal-tmux = {
-      url = "github:niksingh710/minimal-tmux-status";
+      url =
+        "github:niksingh710/minimal-tmux-status/d7188c1aeb1c7dd03230982445b7360f5e230131";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    xremap = { url = "github:xremap/nix-flake"; };
+    xremap = {
+      url = "github:xremap/nix-flake/6b28ae462971c812ee1acdfba9cc01736053c2ca";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = { ... }@inputs:
     let
@@ -29,29 +34,16 @@
         overlays = [ ];
       };
     in {
-      nixosConfigurations.axew = inputs.nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          inherit system;
-          flake_inputs = inputs;
-        };
-        modules = [
-          ./nixos
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.axew = import ./home;
-              backupFileExtension = "backup";
-              extraSpecialArgs = {
-                flake_inputs = inputs;
-                inherit username system;
-              };
-            };
-          }
-        ];
-      };
       formatter.${system} = pkgs.nixfmt-classic;
+      homeConfigurations = {
+        ${username} = inputs.home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./home ];
+          extraSpecialArgs = {
+            flake_inputs = inputs;
+            inherit username system;
+          };
+        };
+      };
     };
 }

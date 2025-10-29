@@ -2,16 +2,6 @@
   programs.nixvim.keymaps = [
     # (vanilla) basic neovim open close keybinds
     {
-      key = "<C-o>";
-      mode = [ "n" ];
-      action = ":edit . <CR>";
-      options = {
-        silent = true;
-        noremap = true;
-        desc = "Open file";
-      };
-    }
-    {
       key = "<C-a>";
       mode = [ "n" ];
       action = ":vsplit . <CR>";
