@@ -1,0 +1,27 @@
+(defpoll current_workspace :interval "0s" "~/.config/eww/scripts/current_workspace.sh")
+
+(defwidget workspace_list []
+	(box :class "workspace_list"
+		 :orientation "horizontal"
+		 :halign "start"
+		 :space-evenly true
+		(label
+			:class { current_workspace == "1" ? "focused_workspace" : "regular_workspace"}
+			:text 1)
+		(label
+			:class { current_workspace == "2" ? "focused_workspace" : "regular_workspace"}
+			:text 2)
+		(label
+			:class { current_workspace == "3" ? "focused_workspace" : "regular_workspace"}
+			:text 3)
+		(label
+			:class { current_workspace == "4" ? "focused_workspace" : "regular_workspace"}
+			:text 4)
+		(label
+			:class { current_workspace == "5" ? "focused_workspace" : "regular_workspace"}
+			:text 5)
+		(label
+			:class { current_workspace == "6" ? "focused_workspace" : "regular_workspace"}
+			:text 6)
+	)
+)

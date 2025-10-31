@@ -1,0 +1,47 @@
+(include "modules/workspace_list.yuck")
+(include "modules/date_time.yuck")
+(include "modules/network.yuck")
+(include "modules/volume.yuck")
+
+(defwidget left []
+	 (box :class "left island"
+		 :space-evenly false
+		(workspace_list)
+	 )
+)
+(defwidget center []
+	 (box :class "center island"
+		 :space-evenly false
+		(date_time)
+	 )
+)
+(defwidget right []
+	 (box :class "right island"
+		 :space-evenly false
+		(volume)
+		(network)
+	 )
+)
+
+(defwindow status_bar
+           :monitor 0
+           :geometry (geometry :x "0px"
+                               :y "0px"
+                               :width "100%"
+                               :height "36px"
+                               :anchor "top center")
+           :windowtype "dock"
+           :wm-ignore false
+  (box :class "status_bar_container"
+		 :orientation "horizontal"
+	(box :halign "start"
+		(left)
+	)
+	(box :halign "center"
+		(center)
+	)
+	(box :halign "end"
+		(right)
+	)
+  )
+)

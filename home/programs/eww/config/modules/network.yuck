@@ -1,0 +1,7 @@
+(defpoll network_SSID :interval "10s" "~/.config/eww/scripts/network.sh")
+
+(defwidget network []
+	(box :class "network"
+		network_SSID
+	)
+)

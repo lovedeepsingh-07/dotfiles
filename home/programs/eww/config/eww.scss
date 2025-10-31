@@ -1,0 +1,44 @@
+$background: black;
+$foreground: white;
+$border: darkgray;
+$primary: #c9c7cd;
+$primary-foreground: black;
+
+* {
+  all: unset;
+}
+
+.status_bar_container {
+  padding: 4px 8px 0px 8px;
+  background: transparent;
+}
+.island{
+  padding: 3px 10px;
+  border-radius: 15px;
+  background-color: $background;
+  border: 1px solid $border;
+}
+
+.workspace_list label {
+  padding: 5px 10px;
+  margin: 0px 2px;
+  border-radius: 15px;
+}
+.regular_workspace {
+  color: $foreground;
+}
+.focused_workspace {
+  background-color: $primary;
+  color: $primary-foreground;
+}
+
+.date_time {
+  color:  $foreground;
+}
+.volume {
+  color:  $foreground;
+}
+.network{
+  margin-left: 8px;
+  color:  $foreground;
+}

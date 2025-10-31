@@ -1,0 +1,8 @@
+(defpoll time :interval "60s"
+  `date "+%A, %d %B %Y, %I:%M %p"`)
+
+(defwidget date_time []
+	(box :class "date_time"
+		time
+	)
+)

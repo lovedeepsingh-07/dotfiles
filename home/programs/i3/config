@@ -42,8 +42,9 @@ exec --no-startup-id redshift -P -O 4000
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-fill ~/dotfiles/media/wallpaper.jpg
 exec --no-startup-id picom
+exec --no-startup-id eww open status_bar
+exec --no-startup-id feh --bg-fill ~/dotfiles/media/wallpaper.jpg
 exec --no-startup-id xremap ~/.config/xremap.yml
 
 # ---------- Volume Controls ----------
@@ -115,7 +116,3 @@ client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
-
-bar {
-        status_command i3status
-}

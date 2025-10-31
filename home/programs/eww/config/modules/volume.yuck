@@ -1,0 +1,7 @@
+(defpoll volume_value :interval "0s" "~/.config/eww/scripts/volume.sh")
+
+(defwidget volume []
+	(box :class "volume"
+		volume_value
+	)
+)

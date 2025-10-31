@@ -6,6 +6,7 @@
   imports = [ flake_inputs.nixvim.homeModules.nixvim ./programs ];
 
   home.packages = with pkgs; [
+    bash
     which
     eza
     fd

@@ -5,6 +5,7 @@
     ./i3
     ./nixvim
     ./picom
+    ./eww
     # ./polybar
     # ./powershell
     ./rofi
