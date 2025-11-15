@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.nixvim = {
     colorscheme = "mellow";
     plugins = {
@@ -95,8 +95,31 @@
         settings = { global_keymaps = false; };
       };
     };
+    extraPlugins = [
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "mellow";
+        src = pkgs.fetchFromGitHub {
+          owner = "mellow-theme";
+          repo = "mellow.nvim";
+          rev = "5cd188489bcc7eb512f0a30581ad972070f8e5cd";
+          hash = "sha256-A+2yTvhrug7hZBcoqfwIuuxz41xUPKZ7zqAwujeHTkI=";
+        };
+        doCheck = false;
+      })
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "helpview";
+        src = pkgs.fetchFromGitHub {
+          owner = "OXY2DEV";
+          repo = "helpview.nvim";
+          rev = "518789535a0cb146224a428edf93a70f98b795db";
+          hash = "sha256-Utcdm/9nAIfIx6oOXHgArS59/oTAOPg+wK+4/Z3TQUQ=";
+        };
+        doCheck = false;
+      })
+    ];
   };
   imports = [
+    ./dired
     ./nvim-tree.nix
     ./bufferline.nix
     ./telescope.nix
@@ -104,7 +127,6 @@
     ./lsp.nix
     ./cmp.nix
     ./conform.nix
-    ./extra.nix
     ./lz-n.nix
     ./obsidian.nix
   ];

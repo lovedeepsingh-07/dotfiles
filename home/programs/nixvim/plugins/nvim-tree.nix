@@ -2,7 +2,7 @@
   programs.nixvim = {
     plugins = {
       nvim-tree = {
-        enable = true;
+        enable = false;
         disableNetrw = true;
         hijackDirectories = {
           enable = false;
