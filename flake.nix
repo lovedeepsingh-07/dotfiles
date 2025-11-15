@@ -1,5 +1,5 @@
 {
-  description = "nixos configuration";
+  description = "home-manager configuration";
   inputs = {
     nixpkgs.url =
       "github:nixos/nixpkgs/d2ed99647a4b195f0bcc440f76edfa10aeb3b743";
@@ -34,29 +34,16 @@
         overlays = [ ];
       };
     in {
-      nixosConfigurations.axew = inputs.nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          inherit system;
-          flake_inputs = inputs;
-        };
-        modules = [
-          ./nixos
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.axew = import ./home;
-              backupFileExtension = "backup";
-              extraSpecialArgs = {
-                flake_inputs = inputs;
-                inherit username system;
-              };
-            };
-          }
-        ];
-      };
       formatter.${system} = pkgs.nixfmt-classic;
+      homeConfigurations = {
+        ${username} = inputs.home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [ ./home ];
+          extraSpecialArgs = {
+            flake_inputs = inputs;
+            inherit username system;
+          };
+        };
+      };
     };
 }

@@ -119,7 +119,6 @@
     ];
   };
   imports = [
-    ./dired
     ./nvim-tree.nix
     ./bufferline.nix
     ./telescope.nix
@@ -127,6 +126,7 @@
     ./lsp.nix
     ./cmp.nix
     ./conform.nix
+	./dired.nix	
     ./lz-n.nix
     ./obsidian.nix
   ];
