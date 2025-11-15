@@ -186,16 +186,26 @@
         noremap = true;
       };
     }
-    # (nvim-tree)
+    # (dired)
     {
       key = "<leader>sf";
       mode = "n";
-      action = ":NvimTreeFindFileToggle<CR>";
+      action = ":Dired<CR>";
       options = {
         silent = true;
         noremap = true;
       };
     }
+    # # (nvim-tree)
+    # {
+    #   key = "<leader>sf";
+    #   mode = "n";
+    #   action = ":NvimTreeFindFileToggle<CR>";
+    #   options = {
+    #     silent = true;
+    #     noremap = true;
+    #   };
+    # }
     # (obsidian)
     {
       key = "<leader>ogf";

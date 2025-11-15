@@ -8,9 +8,9 @@
       })
     ];
     extraConfigLua = ''
-      require("dired").setup{
-	  show_icons = true,
-	  }
+            require("dired").setup{
+      	  show_icons = true,
+      	  }
     '';
   };
 }
