@@ -2,8 +2,8 @@
   programs.nixvim = {
     plugins = {
       nvim-tree = {
-        enable = false;
-        disableNetrw = true;
+        enable = true;
+        disableNetrw = false;
         hijackDirectories = {
           enable = false;
           autoOpen = false;

@@ -126,7 +126,7 @@
     ./lsp.nix
     ./cmp.nix
     ./conform.nix
-	./dired.nix	
+    ./dired.nix
     ./lz-n.nix
     ./obsidian.nix
   ];
