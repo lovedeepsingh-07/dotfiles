@@ -1,8 +1,14 @@
 default:
 	just -l
-update:
-	sudo nixos-rebuild switch --flake .#axew
-update-hm:
-	home-manager switch --flake .#axew
+
+update-nixos:
+	sudo nixos-rebuild switch --flake .#nixos
+
+update-wsl:
+	sudo nixos-rebuild switch --flake .#wsl
+
+update-standalone:
+	home-manager switch --flake .#standalone
+
 clean:
 	nix-collect-garbage -d

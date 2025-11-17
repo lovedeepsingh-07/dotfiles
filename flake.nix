@@ -1,5 +1,5 @@
 {
-  description = "home-manager configuration";
+  description = "nix configuration";
   inputs = {
     nixpkgs.url =
       "github:nixos/nixpkgs/d2ed99647a4b195f0bcc440f76edfa10aeb3b743";
@@ -8,6 +8,10 @@
     home-manager = {
       url =
         "github:nix-community/home-manager/7aae0ee71a17b19708b93b3ed448a1a0952bf111";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/debc562c48c445f9f08778ecb9fc6b35197623ad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
@@ -35,15 +39,60 @@
       };
     in {
       formatter.${system} = pkgs.nixfmt-classic;
-      homeConfigurations = {
-        ${username} = inputs.home-manager.lib.homeManagerConfiguration {
+      nixosConfigurations.wsl = inputs.nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit system;
+          flake_inputs = inputs;
+        };
+        modules = [
+          inputs.nixos-wsl.nixosModules.default
+          { imports = [ ./wsl ]; }
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.axew = import ./home;
+              backupFileExtension = "backup";
+              extraSpecialArgs = {
+                flake_inputs = inputs;
+                inherit username system;
+              };
+            };
+          }
+        ];
+      };
+      nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
+        inherit system;
+        specialArgs = {
+          inherit system;
+          flake_inputs = inputs;
+        };
+        modules = [
+		  ./nixos
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.axew = import ./home;
+              backupFileExtension = "backup";
+              extraSpecialArgs = {
+                flake_inputs = inputs;
+                inherit username system;
+              };
+            };
+          }
+        ];
+      };
+	  homeConfigurations.standalone = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./home ];
           extraSpecialArgs = {
             flake_inputs = inputs;
             inherit username system;
           };
-        };
-      };
+	  };
     };
 }

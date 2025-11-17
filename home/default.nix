@@ -21,7 +21,7 @@
     # clang
     # gdb
     # cmake
-    # nodejs
+    nodejs
     # go
     # bun
     # deno
@@ -35,7 +35,7 @@
     # python312
     # python312Packages.pylatexenc
     # nerd-font-patcher
-    # tree-sitter
+    tree-sitter
     cmatrix
     nyancat
     # cargo-generate
