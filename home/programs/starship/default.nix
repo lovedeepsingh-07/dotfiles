@@ -5,7 +5,7 @@
     settings = {
       add_newline = false;
       format = ''
-        [┌ ](fg:color_text)$username[@](fg:color_red)$hostname$directory$git_branch$git_status$linebreak
+        [┌ ](fg:color_text)$username[@](fg:color_red)$hostname$directory$git_branch$git_status$linebreak$nix_shell
         [└─](fg:color_text)$character'';
       #format = lib.concatStrings [
       #"[┌ ](fg:color_text)"
@@ -31,24 +31,26 @@
         format = "[$hostname]($style)";
         disabled = false;
       };
-
       directory = {
         style = "fg:color_sapphire";
         format = "[ $path ]($style)";
         truncation_length = 1;
       };
-
       git_branch = {
         symbol = "";
         style = "";
         format = "[[$symbol $branch ](fg:color_green)]($style)";
       };
-
       git_status = {
         style = "";
         format = "[[(($all_status$ahead_behind ))](fg:color_yellow)]($style)";
       };
-
+      nix_shell = {
+        impure_msg = "[impure](bold red)";
+        pure_msg = "[pure](bold green)";
+        unknown_msg = "[unknown](bold yellow)";
+        format = "[❄️ $state](bold blue)";
+      };
       line_break = { disabled = false; };
       character = {
         disabled = false;

@@ -15,6 +15,16 @@
         luaConfig.content = ''vim.opt.completeopt = "menu,menuone,noselect"'';
         settings = {
           completion.autocomplete = false;
+		  window = {
+		  	completion = {
+				border = "rounded";
+				winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+			};
+		  	documentation = {
+				border = "rounded";
+				winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+			};
+		  };
           snippets.expand = {
             __raw = ''
                 function(args)

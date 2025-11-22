@@ -11,7 +11,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/debc562c48c445f9f08778ecb9fc6b35197623ad";
+      url =
+        "github:nix-community/NixOS-WSL/debc562c48c445f9f08778ecb9fc6b35197623ad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
@@ -70,7 +71,7 @@
           flake_inputs = inputs;
         };
         modules = [
-		  ./nixos
+          ./nixos
           inputs.home-manager.nixosModules.home-manager
           {
             home-manager = {
@@ -86,13 +87,14 @@
           }
         ];
       };
-	  homeConfigurations.standalone = inputs.home-manager.lib.homeManagerConfiguration {
+      homeConfigurations.standalone =
+        inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [ ./home ];
           extraSpecialArgs = {
             flake_inputs = inputs;
             inherit username system;
           };
-	  };
+        };
     };
 }

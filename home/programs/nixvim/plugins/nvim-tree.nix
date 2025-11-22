@@ -3,7 +3,7 @@
     plugins = {
       nvim-tree = {
         enable = true;
-        disableNetrw = false;
+        disableNetrw = true;
         hijackDirectories = {
           enable = false;
           autoOpen = false;
