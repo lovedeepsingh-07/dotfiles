@@ -39,8 +39,8 @@
         formatters_by_ft = {
           "_" = [ "trim_whitespace" ];
           lua = [ "stylua" ];
-          nix = [ "nixfmt-classic" ];
-          rust = [ "rustfmt" ];
+          # nix = [ "nixfmt-classic" ];
+          # rust = [ "rustfmt" ];
           go = [ "goimports-reviser" "golines" "gofmt" "gofumpt" ];
           javascript = [ "prettierd" "prettier" ];
           typescript = [ "prettierd" "prettier" ];

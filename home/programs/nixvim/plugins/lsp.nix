@@ -9,14 +9,14 @@
         };
         onAttach = # lua
           ''
-            local keymap = vim.keymap
-            local opts = { noremap = true, silent = true }
-            keymap.set("n", "<leader>gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
-            keymap.set("n", "<leader>go", "<cmd>Lspsaga outline<CR>", opts) -- show LSP outine of current buffer
-            keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
-            keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
-            keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
-            keymap.set("n", "<leader>K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
+            -- local keymap = vim.keymap
+            -- local opts = { noremap = true, silent = true }
+            -- keymap.set("n", "<leader>gf", "<cmd>Lspsaga finder<CR>", opts) -- show definition, references
+            -- keymap.set("n", "<leader>go", "<cmd>Lspsaga outline<CR>", opts) -- show LSP outine of current buffer
+            -- keymap.set("n", "<leader>gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
+            -- keymap.set("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
+            -- keymap.set("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts) -- jump to next diagnostic in buffer
+            -- keymap.set("n", "<leader>K", "<cmd>Lspsaga hover_doc<CR>", opts) -- show documentation for what is under cursor
           '';
         servers = {
           lua_ls = {
@@ -32,14 +32,14 @@
             };
           };
           rust_analyzer = {
-            enable = true;
+            enable = false;
             installCargo = false;
             installRustc = false;
             installRustfmt = false;
             settings = { files.excludeDirs = [ "target" "node_modules" ]; };
           };
           clangd = {
-            enable = true;
+            enable = false;
             filetypes = [ "cpp" "c" "objc" "objcpp" ];
           };
           cssls.enable = true;
@@ -48,7 +48,7 @@
           html.enable = true;
           svelte.enable = true;
           tailwindcss.enable = true;
-          gopls.enable = true;
+          gopls.enable = false;
           templ.enable = true;
           nil_ls = {
             enable = true;
@@ -62,7 +62,7 @@
         '';
       };
       lspsaga = {
-        enable = true;
+        enable = false;
         symbolInWinbar.enable = false;
         lightbulb.enable = false;
         ui = {
