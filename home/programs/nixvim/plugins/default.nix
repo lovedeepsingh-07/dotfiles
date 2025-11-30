@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   programs.nixvim = {
-    colorscheme = "mellow";
     plugins = {
       web-devicons = {
         enable = true;
@@ -96,16 +95,6 @@
       };
     };
     extraPlugins = [
-      (pkgs.vimUtils.buildVimPlugin {
-        name = "mellow";
-        src = pkgs.fetchFromGitHub {
-          owner = "mellow-theme";
-          repo = "mellow.nvim";
-          rev = "5cd188489bcc7eb512f0a30581ad972070f8e5cd";
-          hash = "sha256-A+2yTvhrug7hZBcoqfwIuuxz41xUPKZ7zqAwujeHTkI=";
-        };
-        doCheck = false;
-      })
       (pkgs.vimUtils.buildVimPlugin {
         name = "helpview";
         src = pkgs.fetchFromGitHub {
