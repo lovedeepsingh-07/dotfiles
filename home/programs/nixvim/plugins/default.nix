@@ -118,5 +118,6 @@
     # ./dired.nix
     ./lz-n.nix
     ./obsidian.nix
+	./comfy-line-numbers.nix
   ];
 }
