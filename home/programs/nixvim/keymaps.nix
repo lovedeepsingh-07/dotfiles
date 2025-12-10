@@ -180,37 +180,17 @@
     # (lazygit)
     {
       key = "<leader>;g";
-      action = ":LazyGit<CR>";
+      action = ":lua Snacks.lazygit()<CR>";
       options = {
         silent = true;
         noremap = true;
       };
     }
-    # # (dired)
-    # {
-    #   key = "<leader>sf";
-    #   mode = "n";
-    #   action = ":Dired<CR>";
-    #   options = {
-    #     silent = true;
-    #     noremap = true;
-    #   };
-    # }
     # (nvim-tree)
     {
       key = "<leader>sf";
       mode = "n";
       action = ":NvimTreeFindFileToggle<CR>";
-      options = {
-        silent = true;
-        noremap = true;
-      };
-    }
-    # (obsidian)
-    {
-      key = "<leader>ogf";
-      mode = [ "n" ];
-      action = "<cmd>ObsidianFollowLink<CR>";
       options = {
         silent = true;
         noremap = true;
@@ -230,6 +210,31 @@
       key = "<leader>ko";
       mode = [ "n" ];
       action = ''<cmd>lua require("kulala").scratchpad()<CR>'';
+      options = {
+        silent = true;
+        noremap = true;
+      };
+    }
+	# fuzzy-finder
+    {
+      key = "<leader>;f";
+      action = ":lua Snacks.picker.files()<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+    }
+    {
+      key = "<leader>;l";
+      action = ":lua Snacks.picker.grep()<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+    }
+    {
+      key = "<leader>;h";
+      action = ":lua Snacks.picker.help()<CR>";
       options = {
         silent = true;
         noremap = true;

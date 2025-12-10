@@ -59,7 +59,6 @@
         };
         settings = { signcolumn = false; };
       };
-      lazygit.enable = true;
       # render-markdown = {
       #   enable = true;
       #   settings = {
@@ -80,7 +79,7 @@
           enable = true;
           settings.event = [ "BufReadPre" ];
         };
-        settings = { disable_filetype = [ "TelescopePrompt" ]; };
+        # settings = { disable_filetype = [ "TelescopePrompt" ]; };
       };
       # nvim-surround = {
       #   enable = true;
@@ -110,14 +109,13 @@
   imports = [
     ./nvim-tree.nix
     ./bufferline.nix
-    ./telescope.nix
     ./treesitter.nix
     ./lsp.nix
     ./cmp.nix
     ./conform.nix
     # ./dired.nix
     ./lz-n.nix
-    ./obsidian.nix
 	./comfy-line-numbers.nix
+	./snacks
   ];
 }

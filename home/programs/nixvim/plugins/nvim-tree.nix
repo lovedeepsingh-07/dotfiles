@@ -34,7 +34,7 @@
             	vim.keymap.set("n", "d", api.fs.remove, opts("Delete"))
             	vim.keymap.set("n", "g?", api.tree.toggle_help, opts("Help"))
             	vim.keymap.set("n", "gy", api.fs.copy.absolute_path, opts("Copy Absolute Path"))
-            	vim.keymap.set("n", "H", api.tree.toggle_hidden_filter, opts("Toggle Dotfiles"))
+            	-- vim.keymap.set("n", "H", api.tree.toggle_hidden_filter, opts("Toggle Dotfiles"))
             	vim.keymap.set("n", "I", api.tree.toggle_gitignore_filter, opts("Toggle Git Ignore"))
             	vim.keymap.set("n", "P", api.node.navigate.parent, opts("Parent Directory"))
             	vim.keymap.set("n", "q", api.tree.close, opts("Close"))
