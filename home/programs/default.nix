@@ -3,7 +3,7 @@
     ./alacritty
     # ./hypr
     ./i3
-    ./nixvim
+    ./neovim
     ./picom
     ./eww
     # ./polybar
