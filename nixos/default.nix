@@ -20,6 +20,9 @@
   hardware.graphics = { enable = true; };
 
   fonts = { fontDir.enable = true; };
+  fonts.packages = [
+    (import ./font.nix { inherit pkgs; })
+  ];
   users.users.axew = {
     shell = pkgs.zsh;
     isNormalUser = true;
