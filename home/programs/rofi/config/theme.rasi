@@ -1,7 +1,7 @@
 @import "colors"
 
 * {
-    width: 600;
+    width: 720;
     font: "JetBrainsMonoNLNerdFontComplete 14";
 }
 

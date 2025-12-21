@@ -2,6 +2,7 @@
   services = {
     xserver = {
       enable = true;
+      dpi = 144;
       desktopManager = { xterm.enable = true; };
       windowManager.i3 = {
         enable = true;
@@ -10,7 +11,6 @@
           i3status
           i3blocks
           i3-gaps
-          # (polybar.override { i3Support = true; })
           feh
           picom
           rofi

@@ -114,8 +114,8 @@
     ./cmp.nix
     ./conform.nix
     ./lz-n.nix
-	./comfy-line-numbers.nix
-	./snacks
-	./bits.nix
+    ./comfy-line-numbers.nix
+    ./snacks
+    ./bits.nix
   ];
 }

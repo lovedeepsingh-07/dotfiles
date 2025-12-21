@@ -1,19 +1,19 @@
 { pkgs, ... }: {
   programs.nixvim = {
     colorscheme = "mellow";
-	colorschemes = {
-		kanagawa = {
-			enable = false;
-			settings.background.dark = "dragon";
-		};
-		gruvbox.enable = false;
-		rose-pine.enable = false;
-		bamboo.enable = false;
-		catppuccin = {
-			enable = false;
-			settings.background.dark = "mocha";
-		};
-	};
+    colorschemes = {
+      kanagawa = {
+        enable = false;
+        settings.background.dark = "dragon";
+      };
+      gruvbox.enable = false;
+      rose-pine.enable = false;
+      bamboo.enable = false;
+      catppuccin = {
+        enable = false;
+        settings.background.dark = "mocha";
+      };
+    };
     extraPlugins = [
       (pkgs.vimUtils.buildVimPlugin {
         name = "mellow";

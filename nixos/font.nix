@@ -25,7 +25,7 @@ in pkgs.stdenv.mkDerivation rec {
     fontforge -script font-patcher -c --name ${pname} ./JetBrainsMonoNLNerdFont-Regular.ttf
   '';
   installPhase = ''
-	mkdir -p $out/share/fonts/truetype
-	cp ./${pname}-Regular.ttf $out/share/fonts/truetype/
+    mkdir -p $out/share/fonts/truetype
+    cp ./${pname}-Regular.ttf $out/share/fonts/truetype/
   '';
 }

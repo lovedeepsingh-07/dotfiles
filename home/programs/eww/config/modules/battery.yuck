@@ -1,0 +1,7 @@
+(defpoll battery_value :interval "30s" "~/.config/eww/scripts/battery.sh")
+
+(defwidget battery []
+	(box :class "battery"
+		battery_value
+	)
+)

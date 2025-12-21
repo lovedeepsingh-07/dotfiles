@@ -215,7 +215,7 @@
         noremap = true;
       };
     }
-	# fuzzy-finder
+    # fuzzy-finder
     {
       key = "<leader>;f";
       action = ":lua Snacks.picker.files()<CR>";

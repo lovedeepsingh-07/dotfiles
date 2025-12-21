@@ -2,6 +2,7 @@
 (include "modules/date_time.yuck")
 (include "modules/network.yuck")
 (include "modules/volume.yuck")
+(include "modules/battery.yuck")
 
 (defwidget left []
 	 (box :class "left island"
@@ -20,6 +21,7 @@
 		 :space-evenly false
 		(volume)
 		(network)
+		(battery)
 	 )
 )
 
