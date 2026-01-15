@@ -1,13 +1,14 @@
-{ ... }: {
+{...}: {
   programs.nixvim = {
     plugins = {
       lsp = {
         enable = true;
         lazyLoad = {
           enable = true;
-          settings = { event = [ "BufReadPre" ]; };
+          settings = {event = ["BufReadPre"];};
         };
-        onAttach = # lua
+        onAttach =
+          # lua
           ''
             -- local keymap = vim.keymap
             -- local opts = { noremap = true, silent = true }
@@ -23,9 +24,9 @@
             enable = true;
             settings = {
               runtime.version = "LuaJIT";
-              diagnostics.globals = [ "vim" ];
+              diagnostics.globals = ["vim"];
               workspace = {
-                library = [ ''vim.api.nvim_get_runtime_file("",true)'' ];
+                library = [''vim.api.nvim_get_runtime_file("",true)''];
                 checkThirdParty = false;
               };
               telementry.enable = true;
@@ -36,11 +37,11 @@
             installCargo = false;
             installRustc = false;
             installRustfmt = false;
-            settings = { files.excludeDirs = [ "target" "node_modules" ]; };
+            settings = {files.excludeDirs = ["target" "node_modules"];};
           };
           clangd = {
             enable = false;
-            filetypes = [ "cpp" "c" "objc" "objcpp" ];
+            filetypes = ["cpp" "c" "objc" "objcpp"];
           };
           cssls.enable = true;
           ts_ls.enable = true;

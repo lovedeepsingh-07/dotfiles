@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.nixvim = {
     plugins = {
       cmp-nvim-lsp.enable = true;
@@ -7,7 +7,7 @@
         cmp.enable = true;
         cmp.maxWidth = 50;
       };
-      luasnip = { enable = true; };
+      luasnip = {enable = true;};
       cmp-buffer.enable = true;
       cmp-path.enable = true;
       cmp = {
@@ -18,21 +18,19 @@
           window = {
             completion = {
               border = "rounded";
-              winhighlight =
-                "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+              winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
             };
             documentation = {
               border = "rounded";
-              winhighlight =
-                "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
+              winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
             };
           };
           snippets.expand = {
             __raw = ''
-                function(args)
-              	require("luasnip").lsp_expand(args.body)
-              	end
-              	'';
+               function(args)
+              require("luasnip").lsp_expand(args.body)
+              end
+            '';
           };
           mapping = {
             "<C-n>" = "cmp.mapping.select_prev_item()";
@@ -48,11 +46,11 @@
               				})'';
           };
           sources = [
-            { name = "nvim_lsp"; }
-            { name = "luasnip"; }
-            { name = "buffer"; }
-            { name = "path"; }
-            { name = "nvim_lsp"; }
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
+            {name = "buffer";}
+            {name = "path";}
+            {name = "nvim_lsp";}
           ];
         };
       };

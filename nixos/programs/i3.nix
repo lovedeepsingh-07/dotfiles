@@ -1,9 +1,9 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   services = {
     xserver = {
       enable = true;
       dpi = 144;
-      desktopManager = { xterm.enable = true; };
+      desktopManager = {xterm.enable = true;};
       windowManager.i3 = {
         enable = true;
         extraPackages = with pkgs; [

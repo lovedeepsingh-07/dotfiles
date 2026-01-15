@@ -1,28 +1,22 @@
 {
   description = "nix configuration";
   inputs = {
-    nixpkgs.url =
-      "github:nixos/nixpkgs/d2ed99647a4b195f0bcc440f76edfa10aeb3b743";
-    flake-utils.url =
-      "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
+    nixpkgs.url = "github:nixos/nixpkgs/d2ed99647a4b195f0bcc440f76edfa10aeb3b743";
+    flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
     home-manager = {
-      url =
-        "github:nix-community/home-manager/7aae0ee71a17b19708b93b3ed448a1a0952bf111";
+      url = "github:nix-community/home-manager/7aae0ee71a17b19708b93b3ed448a1a0952bf111";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixos-wsl = {
-      url =
-        "github:nix-community/NixOS-WSL/debc562c48c445f9f08778ecb9fc6b35197623ad";
+      url = "github:nix-community/NixOS-WSL/debc562c48c445f9f08778ecb9fc6b35197623ad";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      url =
-        "github:nix-community/nixvim/e114d442b14f3a299307ca9b0f0eab20e821f419";
+      url = "github:nix-community/nixvim/e114d442b14f3a299307ca9b0f0eab20e821f419";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     minimal-tmux = {
-      url =
-        "github:niksingh710/minimal-tmux-status/d7188c1aeb1c7dd03230982445b7360f5e230131";
+      url = "github:niksingh710/minimal-tmux-status/d7188c1aeb1c7dd03230982445b7360f5e230131";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     xremap = {
@@ -30,71 +24,68 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = { ... }@inputs:
-    let
-      username = "axew";
-      system = "x86_64-linux";
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        overlays = [ ];
-      };
-    in {
-      formatter.${system} = pkgs.nixfmt-classic;
-      nixosConfigurations.wsl = inputs.nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          inherit system;
-          flake_inputs = inputs;
-        };
-        modules = [
-          inputs.nixos-wsl.nixosModules.default
-          { imports = [ ./wsl ]; }
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.axew = import ./home;
-              backupFileExtension = "backup";
-              extraSpecialArgs = {
-                flake_inputs = inputs;
-                inherit username system;
-              };
-            };
-          }
-        ];
-      };
-      nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
-        inherit system;
-        specialArgs = {
-          inherit system;
-          flake_inputs = inputs;
-        };
-        modules = [
-          ./nixos
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.axew = import ./home;
-              backupFileExtension = "backup";
-              extraSpecialArgs = {
-                flake_inputs = inputs;
-                inherit username system;
-              };
-            };
-          }
-        ];
-      };
-      homeConfigurations.standalone =
-        inputs.home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home ];
-          extraSpecialArgs = {
-            flake_inputs = inputs;
-            inherit username system;
-          };
-        };
+  outputs = {...} @ inputs: let
+    username = "axew";
+    system = "x86_64-linux";
+    pkgs = import inputs.nixpkgs {
+      inherit system;
+      overlays = [];
     };
+  in {
+    nixosConfigurations.wsl = inputs.nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit system;
+        flake_inputs = inputs;
+      };
+      modules = [
+        inputs.nixos-wsl.nixosModules.default
+        {imports = [./wsl];}
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.axew = import ./home;
+            backupFileExtension = "backup";
+            extraSpecialArgs = {
+              flake_inputs = inputs;
+              inherit username system;
+            };
+          };
+        }
+      ];
+    };
+    nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        inherit system;
+        flake_inputs = inputs;
+      };
+      modules = [
+        ./nixos
+        inputs.home-manager.nixosModules.home-manager
+        {
+          home-manager = {
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.axew = import ./home;
+            backupFileExtension = "backup";
+            extraSpecialArgs = {
+              flake_inputs = inputs;
+              inherit username system;
+            };
+          };
+        }
+      ];
+    };
+    homeConfigurations.standalone = inputs.home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [./home];
+      extraSpecialArgs = {
+        flake_inputs = inputs;
+        inherit username system;
+      };
+    };
+  };
 }

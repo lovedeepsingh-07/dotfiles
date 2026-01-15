@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   programs.nixvim = {
     plugins = {
       web-devicons = {
@@ -18,7 +18,7 @@
         enable = true;
         lazyLoad = {
           enable = true;
-          settings.event = [ "BufReadPre" ];
+          settings.event = ["BufReadPre"];
         };
         settings = {
           filetypes = {
@@ -53,11 +53,11 @@
         lazyLoad = {
           enable = true;
           settings = {
-            cmd = [ "Gitsigns" ];
-            keys = [[ "gs" "<cmd>Gitsigns toggle_signs <CR>" ]];
+            cmd = ["Gitsigns"];
+            keys = [["gs" "<cmd>Gitsigns toggle_signs <CR>"]];
           };
         };
-        settings = { signcolumn = false; };
+        settings = {signcolumn = false;};
       };
       # render-markdown = {
       #   enable = true;
@@ -77,7 +77,7 @@
         enable = true;
         lazyLoad = {
           enable = true;
-          settings.event = [ "BufReadPre" ];
+          settings.event = ["BufReadPre"];
         };
         # settings = { disable_filetype = [ "TelescopePrompt" ]; };
       };
@@ -90,7 +90,7 @@
       # };
       kulala = {
         enable = true;
-        settings = { global_keymaps = false; };
+        settings = {global_keymaps = false;};
       };
     };
     extraPlugins = [

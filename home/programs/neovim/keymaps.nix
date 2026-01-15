@@ -1,9 +1,9 @@
-{ ... }: {
+{...}: {
   programs.nixvim.keymaps = [
     # (vanilla) basic neovim open close keybinds
     {
       key = "<C-a>";
-      mode = [ "n" ];
+      mode = ["n"];
       action = ":vsplit . <CR>";
       options = {
         silent = true;
@@ -13,7 +13,7 @@
     }
     {
       key = "<S-a>";
-      mode = [ "n" ];
+      mode = ["n"];
       action = ":split . <CR>";
       options = {
         silent = true;
@@ -23,7 +23,7 @@
     }
     {
       key = "<S-t>";
-      mode = [ "n" ];
+      mode = ["n"];
       action = ":tabedit . <CR>";
       options = {
         silent = true;
@@ -33,7 +33,7 @@
     }
     {
       key = "<Tab>";
-      mode = [ "n" ];
+      mode = ["n"];
       action = ":tabnext <CR>";
       options = {
         silent = true;
@@ -43,7 +43,7 @@
     }
     {
       key = "<S-Tab>";
-      mode = [ "n" ];
+      mode = ["n"];
       action = ":tabprevious <CR>";
       options = {
         silent = true;
@@ -54,7 +54,7 @@
     # (vanilla) misc
     {
       key = ";m";
-      mode = [ "n" ];
+      mode = ["n"];
       action = ":noh <CR>";
       options = {
         silent = true;
@@ -64,7 +64,7 @@
     }
     {
       key = "H";
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       action = "^";
       options = {
         silent = true;
@@ -74,7 +74,7 @@
     }
     {
       key = "L";
-      mode = [ "n" "v" ];
+      mode = ["n" "v"];
       action = "$";
       options = {
         silent = true;
@@ -84,7 +84,7 @@
     }
     {
       key = "J";
-      mode = [ "n" ];
+      mode = ["n"];
       action = "mzJ`z";
       options = {
         silent = true;
@@ -94,7 +94,7 @@
     }
     {
       key = "<C-u>";
-      mode = [ "n" ];
+      mode = ["n"];
       action = "<C-u>zz";
       options = {
         silent = true;
@@ -104,7 +104,7 @@
     }
     {
       key = "<C-d>";
-      mode = [ "n" ];
+      mode = ["n"];
       action = "<C-d>zz";
       options = {
         silent = true;
@@ -114,7 +114,7 @@
     }
     {
       key = "n";
-      mode = [ "n" ];
+      mode = ["n"];
       action = "nzzzv";
       options = {
         silent = true;
@@ -124,7 +124,7 @@
     }
     {
       key = "N";
-      mode = [ "n" ];
+      mode = ["n"];
       action = "Nzzzv";
       options = {
         silent = true;
@@ -134,13 +134,12 @@
     }
     {
       key = "<C-]>";
-      mode = [ "n" ];
+      mode = ["n"];
       action = "";
       options = {
         silent = true;
         noremap = true;
-        desc =
-          "Disable <C-]> keymap, it took you to the location of definition file of the thing on which your cursor was, it was annoying";
+        desc = "Disable <C-]> keymap, it took you to the location of definition file of the thing on which your cursor was, it was annoying";
       };
     }
 
@@ -196,10 +195,20 @@
         noremap = true;
       };
     }
+    # (dired)
+    {
+      key = "<leader>sd";
+      mode = "n";
+      action = ":Dired<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+    }
     # (kulala)
     {
       key = "<leader>kr";
-      mode = [ "n" ];
+      mode = ["n"];
       action = ''<cmd>lua require("kulala").run()<CR>'';
       options = {
         silent = true;
@@ -208,7 +217,7 @@
     }
     {
       key = "<leader>ko";
-      mode = [ "n" ];
+      mode = ["n"];
       action = ''<cmd>lua require("kulala").scratchpad()<CR>'';
       options = {
         silent = true;

@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -7,7 +7,8 @@
       tmux = "tmux -u";
       open = "explorer.exe";
     };
-    initContent = # sh
+    initContent =
+      # sh
       ''
         export MESA_GLSL_VERSION_OVERRIDE=330
         export MESA_GL_VERSION_OVERRIDE=3.3

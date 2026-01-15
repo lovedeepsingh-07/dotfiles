@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.nixvim = {
     globals = {
       loaded_netrwPlugin = 1;

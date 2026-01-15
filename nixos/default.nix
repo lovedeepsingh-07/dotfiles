@@ -1,5 +1,5 @@
-{ pkgs, ... }: {
-  imports = [ ./hardware-config.nix ./programs ./audio.nix ];
+{pkgs, ...}: {
+  imports = [./hardware-config.nix ./programs ./audio.nix];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -15,15 +15,15 @@
     openssh.enable = true;
   };
 
-  hardware.graphics = { enable = true; };
+  hardware.graphics = {enable = true;};
   hardware.enableAllFirmware = true;
 
-  fonts = { fontDir.enable = true; };
-  fonts.packages = [ (import ./font.nix { inherit pkgs; }) ];
+  fonts = {fontDir.enable = true;};
+  fonts.packages = [(import ./font.nix {inherit pkgs;})];
   users.users.axew = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = [ "wheel" "audio" "networkManager" ];
+    extraGroups = ["wheel" "audio" "networkManager" "input"];
     packages = with pkgs; [
       brave
       alacritty
@@ -33,12 +33,11 @@
     ];
   };
   environment = {
-    pathsToLink = [ "/libexec" ];
-    systemPackages = with pkgs; [ vim git just ];
+    pathsToLink = ["/libexec"];
+    systemPackages = with pkgs; [vim git just];
   };
 
   nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   system.stateVersion = "25.05";
 }
-

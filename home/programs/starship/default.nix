@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.starship = {
     enable = true;
     enableZshIntegration = true;
@@ -51,7 +51,7 @@
         unknown_msg = "[unknown](bold yellow)";
         format = "[❄️ $state](bold blue)";
       };
-      line_break = { disabled = false; };
+      line_break = {disabled = false;};
       character = {
         disabled = false;
         success_symbol = "[](bold fg:color_green)";
