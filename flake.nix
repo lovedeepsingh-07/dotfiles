@@ -23,6 +23,10 @@
       url = "github:xremap/nix-flake/6b28ae462971c812ee1acdfba9cc01736053c2ca";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR/cfec46978cb4b02aa137d3fd06702eb6919be380";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {...} @ inputs: let
     username = "axew";
@@ -63,6 +67,7 @@
         flake_inputs = inputs;
       };
       modules = [
+        inputs.nur.modules.nixos.default
         ./nixos
         inputs.home-manager.nixosModules.home-manager
         {
