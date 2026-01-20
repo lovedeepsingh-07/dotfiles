@@ -44,7 +44,10 @@
             filetypes = ["cpp" "c" "objc" "objcpp"];
           };
           cssls.enable = true;
-          ts_ls.enable = true;
+          ts_ls = {
+            enable = true;
+            filetypes = ["js" "jsx" "ts" "tsx"];
+          };
           eslint.enable = true;
           html.enable = true;
           svelte.enable = true;

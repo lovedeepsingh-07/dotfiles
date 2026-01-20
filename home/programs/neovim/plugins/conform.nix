@@ -45,6 +45,8 @@
           go = ["goimports-reviser" "golines" "gofmt" "gofumpt"];
           javascript = ["prettierd" "prettier"];
           typescript = ["prettierd" "prettier"];
+          typescriptreact = ["prettierd" "prettier"];
+		  tsx = ["prettierd" "prettier"];
           svelte = ["prettierd" "prettier"];
           css = ["prettierd" "prettier"];
           html = ["prettierd" "prettier"];

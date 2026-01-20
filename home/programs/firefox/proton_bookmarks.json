@@ -1,0 +1,20 @@
+[
+  {
+    "name": "proton-bookmarks",
+    "toolbar": true,
+    "bookmarks": [
+      {
+        "name": "bitwarden",
+        "url": "https://vault.bitwarden.com/"
+      },
+      {
+        "name": "mail",
+        "url": "https://proton.me/mail"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/"
+      }
+    ]
+  }
+]

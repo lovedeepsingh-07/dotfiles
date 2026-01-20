@@ -1,29 +1,32 @@
-{lib, ...}: {
-  id = 1;
-  name = "privacy";
+{
+  lib,
+  extensions,
+  ...
+}: {
+  id = 0;
+  isDefault = true;
+  name = "google_personal";
   bookmarks = {
     force = true;
-    settings = [
-      {
-        name = "bookmarks";
-        toolbar = true;
-        bookmarks = [
-          {
-            name = "gmail";
-            url = "https://gmail.com";
-          }
-        ];
-      }
+    settings = lib.importJSON ../google_bookmarks.json;
+  };
+  extensions = {
+    force = true;
+    packages = [
+      extensions.privacy_badger
+      extensions.dark_reader
+      extensions.matte_black_theme
     ];
   };
   settings = {
+    "browser.shell.checkDefaultBrowser" = false; # show warning about making firefox the default browser
+    "browser.aboutConfig.showWarning" = false; # show warning when accessing "about:config"
     "browser.startup.homepage" = "about:home"; # where should the home page point to
     "browser.newtabpage.enabled" = true; # enable home page
     "browser.newtabpage.activity-stream.showSearch" = true; # enable search bar on the home page
     "browser.newtabpage.activity-stream.feeds.topsites" = false; # disable the topsites on home page
     "browser.newtabpage.activity-stream.feeds.section.topstories" = false; # disable the top recommended stories on home page
     "browser.tabs.groups.smart.userEnabled" = false; # disable "Use AI to suggest tabs and a name for tab groups"
-    "layout.css.prefers-color-scheme.content-override" = 0; # enable dark theme
     "browser.download.useDownloadDir" = false; # always ask where to download before downloading
     "browser.preferences.defaultPerformanceSettings.enabled" = false; # "Use recommended performance settings"
     "layers.acceleration.disabled" = true; # disable hardware acceleration
@@ -39,7 +42,8 @@
     "extensions.formautofill.creditCards.enabled" = false; # "Save and fill payment methods"
     "datareporting.healthreport.uploadEnabled" = false; # "Send technical and interaction data to Mozilla"
     "datareporting.usage.uploadEnabled" = false; # "Send daily usage ping to Mozilla"
-    "browser.bookmarks.addedImportButton" = false;
-    "browser.uiCustomization.state" = lib.importJSON ../toolbar-config.json;
+    "layout.css.prefers-color-scheme.content-override" = 0; # enable dark theme
+    "browser.uiCustomization.state" = lib.importJSON ../toolbar-config.json; # UI layout theme setup
+    "extensions.autoDisableScopes" = 0; # auto enable installed extensions
   };
 }

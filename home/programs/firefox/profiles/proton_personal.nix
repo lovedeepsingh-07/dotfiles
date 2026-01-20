@@ -3,28 +3,17 @@
   extensions,
   ...
 }: {
-  id = 0;
-  isDefault = true;
-  name = "personal";
+  id = 1;
+  name = "proton_personal";
   bookmarks = {
     force = true;
-    settings = [
-      {
-        name = "bookmarks";
-        toolbar = true;
-        bookmarks = [
-          {
-            name = "gmail";
-            url = "https://gmail.com";
-          }
-        ];
-      }
-    ];
+    settings = lib.importJSON ../proton_bookmarks.json;
   };
   extensions = {
     force = true;
     packages = [
       extensions.privacy_badger
+      extensions.dark_reader
       extensions.matte_black_theme
     ];
   };
