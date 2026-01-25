@@ -31,6 +31,7 @@
       eww
       brightnessctl
       flameshot
+      gimp
     ];
   };
   environment = {

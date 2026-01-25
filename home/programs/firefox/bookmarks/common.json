@@ -1,0 +1,14 @@
+[
+  {
+    "name": "bitwarden",
+    "url": "https://vault.bitwarden.com"
+  },
+  {
+    "name": "github",
+    "url": "https://github.com"
+  },
+  {
+    "name": "discord",
+    "url": "https://discord.com/app"
+  }
+]

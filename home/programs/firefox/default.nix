@@ -34,8 +34,10 @@ in {
     enable = true;
     policies = {};
     profiles = {
-      personal = import ./profiles/google_personal.nix {inherit lib extensions;};
-      privacy = import ./profiles/proton_personal.nix {inherit lib extensions;};
+      google_personal = import ./profiles/google_personal.nix {inherit lib extensions;};
+      google_professional = import ./profiles/google_professional.nix {inherit lib extensions;};
+      proton_personal = import ./profiles/proton_personal.nix {inherit lib extensions;};
+      google_extra = import ./profiles/google_extra.nix {inherit lib extensions;};
     };
   };
 }

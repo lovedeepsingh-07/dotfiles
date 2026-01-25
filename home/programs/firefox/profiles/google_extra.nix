@@ -3,15 +3,15 @@
   extensions,
   ...
 }: {
-  id = 2;
-  name = "proton_personal";
+  id = 3;
+  name = "google_extra";
   bookmarks = {
     force = true;
     settings = [
       {
         name = "bookmarks";
         toolbar = true;
-        bookmarks = lib.importJSON ../bookmarks/proton.json ++ lib.importJSON ../bookmarks/common.json;
+        bookmarks = lib.importJSON ../bookmarks/google.json ++ lib.importJSON ../bookmarks/common.json;
       }
     ];
   };
