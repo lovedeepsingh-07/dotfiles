@@ -11,24 +11,27 @@
       {
         name = "bookmarks";
         toolbar = true;
-        bookmarks = lib.importJSON ../bookmarks/google.json ++ lib.importJSON ../bookmarks/common.json ++ [
-		{
-			name = "codeberg";
-			url = "https://codeberg.org";
-		}
-		{
-			name = "commbank";
-			url = "https://www.my.commbank.com.au/";
-		}
-		{
-			name = "cloudflare";
-			url = "https://dash.cloudflare.com";
-		}
-		{
-			name = "leetcode";
-			url = "https://leetcode.com";
-		}
-		];
+        bookmarks =
+          lib.importJSON ../bookmarks/google.json
+          ++ lib.importJSON ../bookmarks/common.json
+          ++ [
+            {
+              name = "codeberg";
+              url = "https://codeberg.org";
+            }
+            {
+              name = "commbank";
+              url = "https://www.my.commbank.com.au/";
+            }
+            {
+              name = "cloudflare";
+              url = "https://dash.cloudflare.com";
+            }
+            {
+              name = "leetcode";
+              url = "https://leetcode.com";
+            }
+          ];
       }
     ];
   };

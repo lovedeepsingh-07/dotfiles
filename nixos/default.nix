@@ -32,6 +32,7 @@
       brightnessctl
       flameshot
       gimp
+      nautilus
     ];
   };
   environment = {

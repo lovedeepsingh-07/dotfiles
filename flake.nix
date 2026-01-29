@@ -27,6 +27,8 @@
       url = "github:nix-community/NUR/cfec46978cb4b02aa137d3fd06702eb6919be380";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # (made-by-me): stuff after this is made by me
+    alex.url = "github:lovedeepsingh-07/alex/a9792da45f027526d68484bd96b1c07442496c55";
   };
   outputs = {...} @ inputs: let
     username = "axew";

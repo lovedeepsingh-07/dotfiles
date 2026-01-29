@@ -2,6 +2,7 @@
   pkgs,
   flake_inputs,
   username,
+  system,
   ...
 }: {
   home.username = username;
@@ -30,6 +31,9 @@
     nyancat
     luajit
     pkg-config
+
+    # (made-by-me)
+    flake_inputs.alex.packages."${system}".default
   ];
 
   home.sessionVariables = {NIX_PATH = "$HOME/.nix-defexpr/channels";};

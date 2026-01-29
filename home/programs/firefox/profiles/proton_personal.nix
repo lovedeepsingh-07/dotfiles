@@ -11,7 +11,15 @@
       {
         name = "bookmarks";
         toolbar = true;
-        bookmarks = lib.importJSON ../bookmarks/proton.json ++ lib.importJSON ../bookmarks/common.json;
+        bookmarks =
+          lib.importJSON ../bookmarks/proton.json
+          ++ lib.importJSON ../bookmarks/common.json
+          ++ [
+            {
+              name = "ente";
+              url = "https://web.ente.io/gallery";
+            }
+          ];
       }
     ];
   };
