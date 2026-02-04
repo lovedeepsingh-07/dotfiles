@@ -4,7 +4,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  time.timeZone = "Asia/Kolkata";
+  time.timeZone = "Australia/Melbourne";
   networking = {
     hostName = "Trash-Box";
     networkmanager.enable = true;
@@ -12,7 +12,7 @@
 
   services = {
     libinput.enable = true;
-    openssh.enable = true;
+    # openssh.enable = true;
   };
 
   hardware.graphics = {enable = true;};
