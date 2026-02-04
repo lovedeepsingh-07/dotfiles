@@ -7,7 +7,7 @@
   services.xremap = {
     enable = true;
     userName = username;
-	withX11 = true;
+    withX11 = true;
     config = {
       modmap = [
         {

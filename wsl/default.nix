@@ -1,8 +1,8 @@
-{pkgs, ...}: {
+{pkgs, username, ...}: {
   time.timeZone = "Asia/Kolkata";
   programs.zsh.enable = true;
-  wsl.defaultUser = "axew";
-  users.users.axew = {
+  wsl.defaultUser = username;
+  users.users.${username} = {
     shell = pkgs.zsh;
     isNormalUser = true;
     extraGroups = ["wheel" "audio" "networkManager"];

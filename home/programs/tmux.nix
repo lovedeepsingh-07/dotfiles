@@ -1,9 +1,9 @@
-{flake_inputs, ...}: {
+{flake_inputs, system, ...}: {
   programs.tmux = {
     enable = true;
     plugins = [
       {
-        plugin = flake_inputs.minimal-tmux.packages.x86_64-linux.default;
+        plugin = flake_inputs.minimal-tmux.packages.${system}.default;
         extraConfig =
           # tmux
           ''

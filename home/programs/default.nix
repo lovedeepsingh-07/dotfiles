@@ -1,19 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    ./alacritty
-    # ./hypr
-    ./i3
     ./neovim
-    ./picom
-    ./eww
-    ./firefox
-    # ./polybar
-    # ./powershell
-    ./rofi
-    ./starship
-    ./tmux
-    # ./waybar
-    ./zsh
+    ./starship.nix
+    ./tmux.nix
+    ./zsh.nix
   ];
 
   programs.home-manager.enable = true;

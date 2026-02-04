@@ -9,7 +9,7 @@
   home.homeDirectory = "/home/${username}";
   news.display = "silent";
 
-  imports = [flake_inputs.nixvim.homeModules.nixvim ./programs];
+  imports = [flake_inputs.nixvim.homeModules.nixvim ./programs ./configs ];
 
   home.packages = with pkgs; [
     alejandra
@@ -31,12 +31,10 @@
     nyancat
     luajit
     pkg-config
-
-    # (made-by-me)
     flake_inputs.alex.packages."${system}".default
+    flake_inputs.witr.packages."${system}".default
   ];
 
   home.sessionVariables = {NIX_PATH = "$HOME/.nix-defexpr/channels";};
-
   home.stateVersion = "25.05";
 }
