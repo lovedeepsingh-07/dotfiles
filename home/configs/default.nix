@@ -5,9 +5,9 @@
     ./i3
     ./picom
     ./eww
-    ./firefox
     ./polybar
     ./rofi
     ./waybar
+	./zathura
   ];
 }

@@ -12,11 +12,12 @@
   users.users.${username}.packages = [
     pkgs.brave
     pkgs.alacritty
-    pkgs.wineWowPackages.stable # for running windows apps on linux
+    pkgs.wineWowPackages.stable
     pkgs.eww
     pkgs.brightnessctl
     pkgs.flameshot
     pkgs.gimp
     pkgs.nautilus
+	pkgs.onboard
   ];
 }

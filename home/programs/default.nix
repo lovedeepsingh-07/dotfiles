@@ -4,6 +4,7 @@
     ./starship.nix
     ./tmux.nix
     ./zsh.nix
+    ./firefox
   ];
 
   programs.home-manager.enable = true;

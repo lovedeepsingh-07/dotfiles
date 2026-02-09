@@ -31,6 +31,11 @@
     nyancat
     luajit
     pkg-config
+	entr
+	pandoc
+	unoconv
+	typst
+	zathura
     flake_inputs.alex.packages."${system}".default
     flake_inputs.witr.packages."${system}".default
   ];
