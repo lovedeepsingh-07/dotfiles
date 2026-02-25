@@ -45,6 +45,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id picom
 exec --no-startup-id eww open status_bar
 exec --no-startup-id feh --bg-fill ~/dotfiles/media/wallpaper.png
+exec --no-startup-id alex daemon ~/Music
 # exec --no-startup-id xremap ~/.config/xremap.yml
 
 # ---------- Volume Controls ----------

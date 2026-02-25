@@ -20,7 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # (single-packages)
-    alex.url = "github:lovedeepsingh-07/alex/a9792da45f027526d68484bd96b1c07442496c55";
+    alex.url = "github:lovedeepsingh-07/alex/ca0c75eb426d9a24b14d977d6d9e97c904dd4cb7";
     witr.url = "github:pranshuparmar/witr/ce90dd265a1c376ac200da0bdaa1fd0712e4f8bb";
     minimal-tmux.url = "github:niksingh710/minimal-tmux-status/d7188c1aeb1c7dd03230982445b7360f5e230131";
     xremap.url = "github:xremap/nix-flake/6b28ae462971c812ee1acdfba9cc01736053c2ca";

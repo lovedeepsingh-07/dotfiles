@@ -7,8 +7,6 @@
     prettierd
     jq
     yamlfmt
-    isort
-    black
     shfmt
     clang-tools
     taplo
@@ -54,7 +52,6 @@
           c = ["clang-format"];
           json = ["jq"];
           yaml = ["yamlfmt"];
-          python = ["isort" "black"];
           markdown = ["prettierd" "prettier"];
           sh = ["shfmt"];
           toml = ["taplo"];

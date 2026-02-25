@@ -7,7 +7,6 @@
     ./hardware-config.nix
     ./programs
     ./audio.nix
-    ./services.nix
     ./font.nix
   ];
 
@@ -16,12 +15,30 @@
 
   time.timeZone = "Australia/Melbourne";
   networking = {
-    hostName = "Trash-Box";
+    hostName = "trash-can";
     networkmanager.enable = true;
+	firewall = {
+		enable = true;
+		allowPing = false;
+		allowedTCPPorts = [ ];
+		allowedUDPPorts = [ ];
+		checkReversePath = "strict";
+		logRefusedConnections = true;
+	};
   };
+ #  services.resolved = {
+ #  	enable = true;
+	# dnssec = "true";
+	# domains = ["~."];
+	# fallbackDns = [ "9.9.9.9" "1.1.1.1" ];
+ #  };
+  services.libinput.enable = true;
 
   hardware.graphics = {enable = true;};
   hardware.enableAllFirmware = true;
+
+   virtualisation.virtualbox.host.enable = true;
+   users.extraGroups.vboxusers.members = [ username ];
 
   users.users.${username} = {
     shell = pkgs.zsh;

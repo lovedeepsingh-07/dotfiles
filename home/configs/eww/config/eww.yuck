@@ -1,4 +1,5 @@
 (include "modules/workspace_list.yuck")
+(include "modules/alex.yuck")
 (include "modules/date_time.yuck")
 (include "modules/network.yuck")
 (include "modules/volume.yuck")
@@ -8,6 +9,7 @@
 	 (box :class "left island"
 		 :space-evenly false
 		(workspace_list)
+		(alex)
 	 )
 )
 (defwidget center []

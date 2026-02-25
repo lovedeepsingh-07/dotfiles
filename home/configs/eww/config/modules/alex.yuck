@@ -1,0 +1,27 @@
+(defpoll status :interval "1s" "alex --just-info status")
+
+(defwidget tooltip_content []
+  (box :class "alex_tooltip" :orientation "vertical" :space-evenly false
+	(label :text "- ${status.current_audio == "null" ? "NO AUDIO" : "${status.current_audio.title}"}" :halign "start")
+	(label :text "")
+	(label :text "Next On: " :halign "start")
+	(for track in {status.queue}
+	  (label :text "- ${track.title}" :halign "start")
+	)
+  )
+)
+
+(defwidget tooltip_display []
+  (label
+    :text ": ${status.current_audio == "null" ? "NO AUDIO" : "${status.is_paused ? '(P) ' : ''}${substring(status.current_audio.title, 0, 22)}..."}"
+  )
+)
+
+(defwidget alex []
+  (box :class "alex"
+    (tooltip
+	  (tooltip_content)
+      (tooltip_display)
+    )
+  )
+)

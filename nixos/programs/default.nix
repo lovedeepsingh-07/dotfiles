@@ -19,5 +19,6 @@
     pkgs.gimp
     pkgs.nautilus
 	pkgs.onboard
+	pkgs.wireguard-tools
   ];
 }
