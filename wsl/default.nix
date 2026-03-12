@@ -1,4 +1,8 @@
-{pkgs, username, ...}: {
+{
+  pkgs,
+  username,
+  ...
+}: {
   time.timeZone = "Asia/Kolkata";
   programs.zsh.enable = true;
   wsl.defaultUser = username;

@@ -2,7 +2,7 @@
   description = "nix configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/d2ed99647a4b195f0bcc440f76edfa10aeb3b743";
-	flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
+    flake-utils.url = "github:numtide/flake-utils/11707dc2f618dd54ca8739b309ec4fc024de578b";
     home-manager = {
       url = "github:nix-community/home-manager/7aae0ee71a17b19708b93b3ed448a1a0952bf111";
       inputs.nixpkgs.follows = "nixpkgs";

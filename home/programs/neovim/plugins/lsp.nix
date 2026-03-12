@@ -43,15 +43,15 @@
             enable = false;
             filetypes = ["cpp" "c" "objc" "objcpp"];
           };
-          cssls.enable = true;
+          cssls.enable = false;
           ts_ls = {
-            enable = true;
+            enable = false;
             filetypes = ["js" "jsx" "ts" "tsx"];
           };
-          eslint.enable = true;
-          html.enable = true;
-          svelte.enable = true;
-          tailwindcss.enable = true;
+          eslint.enable = false;
+          html.enable = false;
+          svelte.enable = false;
+          tailwindcss.enable = false;
           gopls.enable = false;
           templ.enable = true;
           nil_ls = {

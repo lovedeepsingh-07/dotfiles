@@ -1,4 +1,8 @@
-{flake_inputs, system, ...}: {
+{
+  flake_inputs,
+  system,
+  ...
+}: {
   programs.tmux = {
     enable = true;
     plugins = [

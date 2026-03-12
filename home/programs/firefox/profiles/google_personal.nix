@@ -21,6 +21,14 @@
               url = "https://www.reddit.com";
             }
             {
+              name = "hacker-news";
+              url = "https://news.ycombinator.com";
+            }
+            {
+              name = "bluesky";
+              url = "https://bsky.app/";
+            }
+            {
               name = "vibe_coding";
               bookmarks = [
                 {

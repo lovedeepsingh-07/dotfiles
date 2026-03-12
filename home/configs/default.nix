@@ -8,6 +8,6 @@
     ./polybar
     ./rofi
     ./waybar
-	./zathura
+    ./zathura
   ];
 }
