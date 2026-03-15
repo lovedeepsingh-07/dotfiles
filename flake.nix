@@ -19,6 +19,10 @@
       url = "github:nix-community/NUR/cfec46978cb4b02aa137d3fd06702eb6919be380";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust_overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # (single-packages)
     alex.url = "github:lovedeepsingh-07/alex/ca0c75eb426d9a24b14d977d6d9e97c904dd4cb7";
     witr.url = "github:pranshuparmar/witr/ce90dd265a1c376ac200da0bdaa1fd0712e4f8bb";
@@ -28,9 +32,9 @@
   outputs = {...} @ inputs: let
     username = "axew";
     system = "x86_64-linux";
+    overlays = [(import inputs.rust_overlay)];
     pkgs = import inputs.nixpkgs {
-      inherit system;
-      overlays = [];
+      inherit system overlays;
     };
   in {
     nixosConfigurations.wsl = inputs.nixpkgs.lib.nixosSystem {
@@ -64,13 +68,16 @@
         flake_inputs = inputs;
       };
       modules = [
+        {
+          nixpkgs.overlays = overlays;
+        }
         inputs.nur.modules.nixos.default
         ./nixos
         inputs.home-manager.nixosModules.home-manager
         {
           home-manager = {
             useGlobalPkgs = true;
-            useUserPackages = true;
+            # useUserPackages = true;
             users.axew = import ./home;
             backupFileExtension = "backup";
             extraSpecialArgs = {

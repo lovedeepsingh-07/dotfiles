@@ -913,6 +913,7 @@
         "nixpkgs": "nixpkgs_3",
         "nixvim": "nixvim",
         "nur": "nur",
+        "rust_overlay": "rust_overlay_2",
         "witr": "witr",
         "xremap": "xremap"
       }
@@ -936,6 +937,26 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "rev": "a9c35d6e7cb70c5719170b6c2d3bb589c5e048af",
+        "type": "github"
+      }
+    },
+    "rust_overlay_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1773457417,
+        "narHash": "sha256-waABTSxPdbxml4BhcabHhyQF02Qnj27qRU4ard0mTQo=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "055977c30249484010750e03074c744dcdaa0d23",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
         "type": "github"
       }
     },

@@ -8,13 +8,13 @@
     zsh.enable = true;
     dconf.enable = true;
     i3lock.enable = true;
-	nix-ld = {
-	  enable = true;
-	  libraries = [
-		pkgs.gtk3
-		pkgs.gtk4
-	  ];
-	};
+    # nix-ld = {
+    #   enable = true;
+    #   libraries = [
+    #     pkgs.gtk3
+    #     pkgs.gtk4
+    #   ];
+    # };
   };
   users.users.${username}.packages = [
     pkgs.brave
@@ -29,6 +29,6 @@
     pkgs.wireguard-tools
     pkgs.gnome-network-displays
     pkgs.qbittorrent
-	pkgs.lunacy
+    pkgs.lunacy
   ];
 }

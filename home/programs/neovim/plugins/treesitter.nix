@@ -38,6 +38,7 @@
             "latex"
             "nix"
             "just"
+            "kotlin"
           ];
           highlight = {enable = true;};
         };

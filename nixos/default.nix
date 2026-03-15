@@ -14,9 +14,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   xdg.portal = {
-  	enable = true;
-	config.common.default = ["gtk"];
-	extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    enable = true;
+    config.common.default = ["gtk"];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   time.timeZone = "Australia/Melbourne";
@@ -59,12 +59,12 @@
 
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [username];
-  boot.blacklistedKernelModules = [ "kvm_intel" "kvm_amd" ];
+  boot.blacklistedKernelModules = ["kvm_intel" "kvm_amd"];
 
   users.users.${username} = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = ["wheel" "audio" "networkManager" "input" "vboxusers"];
+    extraGroups = ["wheel" "audio" "networkManager" "input" "vboxusers" "adbusers" "kvm"];
   };
   environment = {
     pathsToLink = ["/libexec"];
