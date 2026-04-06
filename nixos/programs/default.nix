@@ -30,5 +30,8 @@
     pkgs.gnome-network-displays
     pkgs.qbittorrent
     pkgs.lunacy
+	pkgs.godot
+	pkgs.arion
+	pkgs.docker-client
   ];
 }

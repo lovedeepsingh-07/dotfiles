@@ -13,6 +13,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  security.sudo-rs.enable = true;
+
   xdg.portal = {
     enable = true;
     config.common.default = ["gtk"];
@@ -57,14 +59,23 @@
   hardware.graphics = {enable = true;};
   hardware.enableAllFirmware = true;
 
-  virtualisation.virtualbox.host.enable = true;
+  virtualisation = {
+  	virtualbox.host.enable = true;
+	docker.enable = true;
+	podman = {
+		enable = true;
+		# dockerSocket.enable = true;
+		defaultNetwork.settings.dns_enabled = true;
+	};
+  };
+
   users.extraGroups.vboxusers.members = [username];
   boot.blacklistedKernelModules = ["kvm_intel" "kvm_amd"];
 
   users.users.${username} = {
     shell = pkgs.zsh;
     isNormalUser = true;
-    extraGroups = ["wheel" "audio" "networkManager" "input" "vboxusers" "adbusers" "kvm"];
+    extraGroups = ["wheel" "audio" "networkManager" "input" "vboxusers" "adbusers" "kvm" "podman"];
   };
   environment = {
     pathsToLink = ["/libexec"];

@@ -15,12 +15,13 @@
       url = "github:nix-community/nixvim/e114d442b14f3a299307ca9b0f0eab20e821f419";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # (package-repositories)
     nur = {
       url = "github:nix-community/NUR/cfec46978cb4b02aa137d3fd06702eb6919be380";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    rust_overlay = {
-      url = "github:oxalica/rust-overlay";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # (single-packages)
@@ -28,11 +29,16 @@
     witr.url = "github:pranshuparmar/witr/ce90dd265a1c376ac200da0bdaa1fd0712e4f8bb";
     minimal-tmux.url = "github:niksingh710/minimal-tmux-status/d7188c1aeb1c7dd03230982445b7360f5e230131";
     xremap.url = "github:xremap/nix-flake/6b28ae462971c812ee1acdfba9cc01736053c2ca";
+    # (for-building-other-stuff)
+    rust_overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = {...} @ inputs: let
     username = "axew";
     system = "x86_64-linux";
-    overlays = [(import inputs.rust_overlay)];
+    overlays = [(import inputs.rust_overlay) inputs.nix-vscode-extensions.overlays.default];
     pkgs = import inputs.nixpkgs {
       inherit system overlays;
     };

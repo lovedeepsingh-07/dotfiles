@@ -5,6 +5,7 @@
     ./tmux.nix
     ./zsh.nix
     ./firefox
+    ./vscode.nix
   ];
 
   programs.home-manager.enable = true;
