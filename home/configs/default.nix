@@ -10,4 +10,8 @@
     ./waybar
     ./zathura
   ];
+  home.file.".config/pgcli/config".text = ''
+    [main]
+    keyring = False
+  '';
 }

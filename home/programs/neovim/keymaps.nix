@@ -224,7 +224,7 @@
         noremap = true;
       };
     }
-    # fuzzy-finder
+    # (snacks fuzzy finder)
     {
       key = "<leader>;f";
       action = ":lua Snacks.picker.files()<CR>";
@@ -244,6 +244,16 @@
     {
       key = "<leader>;h";
       action = ":lua Snacks.picker.help()<CR>";
+      options = {
+        silent = true;
+        noremap = true;
+      };
+    }
+    # (Molten.nvim)
+    {
+      key = "<leader>;m";
+      mode = ["v"];
+      action = ":<C-u>MoltenEvaluateVisual<CR>gv";
       options = {
         silent = true;
         noremap = true;

@@ -38,7 +38,10 @@
   outputs = {...} @ inputs: let
     username = "axew";
     system = "x86_64-linux";
-    overlays = [(import inputs.rust_overlay) inputs.nix-vscode-extensions.overlays.default];
+    overlays = [
+      (import inputs.rust_overlay)
+      inputs.nix-vscode-extensions.overlays.default
+    ];
     pkgs = import inputs.nixpkgs {
       inherit system overlays;
     };

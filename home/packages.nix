@@ -35,5 +35,7 @@ in {
     flake_inputs.witr.packages."${system}".default
     (import ../packages/babyshark.nix {inherit pkgs rust_pkg;})
     wireshark
+    kew
+    zip
   ];
 }

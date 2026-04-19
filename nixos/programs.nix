@@ -3,7 +3,7 @@
   username,
   ...
 }: {
-  imports = [./xremap.nix ./i3.nix];
+  imports = [];
   programs = {
     zsh.enable = true;
     dconf.enable = true;
@@ -30,8 +30,9 @@
     pkgs.gnome-network-displays
     pkgs.qbittorrent
     pkgs.lunacy
-	pkgs.godot
-	pkgs.arion
-	pkgs.docker-client
+    pkgs.godot
+    pkgs.arion
+    pkgs.docker-client
+    pkgs.pgcli
   ];
 }

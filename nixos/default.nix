@@ -4,16 +4,17 @@
   ...
 }: {
   imports = [
-    ./hardware-config.nix
-    ./programs
-    ./audio.nix
+    ./services
     ./font.nix
+    ./hardware-config.nix
+    ./programs.nix
   ];
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   security.sudo-rs.enable = true;
+  security.rtkit.enable = true;
 
   xdg.portal = {
     enable = true;
@@ -54,19 +55,18 @@
     #      };
     #    };
   };
-  services.libinput.enable = true;
 
   hardware.graphics = {enable = true;};
   hardware.enableAllFirmware = true;
 
   virtualisation = {
-  	virtualbox.host.enable = true;
-	docker.enable = true;
-	podman = {
-		enable = true;
-		# dockerSocket.enable = true;
-		defaultNetwork.settings.dns_enabled = true;
-	};
+    virtualbox.host.enable = true;
+    docker.enable = true;
+    podman = {
+      enable = true;
+      # dockerSocket.enable = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
   };
 
   users.extraGroups.vboxusers.members = [username];

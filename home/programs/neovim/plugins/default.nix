@@ -117,6 +117,6 @@
     ./comfy-line-numbers.nix
     ./snacks
     ./bits.nix
-	./molten.nix
+    ./molten.nix
   ];
 }
